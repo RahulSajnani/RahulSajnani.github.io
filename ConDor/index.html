@@ -161,7 +161,7 @@
     <!--/ Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
-          <img src="data/images/overview2.png" width="80%" />
+          <img src="data/images/teaser.jpg" width="100%" />
       </div>
       </div>
     </div>
@@ -189,16 +189,26 @@
       <div class="column is-full">
         <h2 class="title is-3">Overview</h2>
         <div class="content">
-          <img src="data/images/overview2.png" width="100%"/>
+          <img src="data/images/ConDor_j_v4.png" width="100%"/>
         </div>
         </br>
         <div class="content has-text-justified">
           <p>
-            Given a pre-trained NeRF model, we sample its volumetric density grid to obtain the 3D scene representation.
-            This grid is converted to a semantic-feature grid by employing a fully convolutional volume-to-volume network thus allowing for geometric reasoning.
-            The semantic-feature grid is in turn translated to semantic probability distributions using the volumetric rendering equation.
-            Note the semantic 3D UNet is trained across all scenes in the <i>TrainScenes</i> set, though not explicitly depicted for the sake of simplicity. 
-            Additionally, note that NeSF is trained <i>solely</i> using 2D supervisory signals and that no segmentation maps are provided at test time.
+            We introduce , <b>ConDor</b> a method for self-supervised category-level
+            <b><u>C</u></b><b><u>on</u></b>icalization of the 3<b><u>D</u></b> p<b><u>o</u></b>se of
+            pa<b><u>r</u></b>tial shapes.
+            It consists of a neural network that is trained on an un-canonicalized collection of 3D point clouds with inconsistent
+            3D poses.
+
+            During inference, our method takes a full or partial 3D point cloud of an object at an arbitrary pose, and outputs a
+            canonical rotation frame and translation vector.
+            To enable operation on instances from different categories, we build upon Tensor Field Networks
+            (TFNs), a 3D point cloud architecture that is equivariant to 3D rotation and point permutation,
+            and invariant to translation.
+
+            To handle partial shapes, we use a two-branch (Siamese) network with training data that simulates partiality through shape slicing or camera projection.
+            We introduce several losses to help our method learn to canonicalize 3D pose via self-supervision.
+            A surprising feature of our method is the (optional) ability to learn consistent part co-segmentation across instances without any supervision.
           </p>
           </br>
         </div>
@@ -214,6 +224,9 @@
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
+        <!-- <div class="item item-steve"> -->
+          <img src="data/images/ConDor_j_v4.png" width="100%" />
+        <!-- </div> -->
         <div class="item item-steve">
           <video poster="" id="klevr" autoplay controls muted loop height="100%">
             <source src="data/videos/143302444-a09a889a-a864-46e7-bac0-4d627f08eea2.mp4"
