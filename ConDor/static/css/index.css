@@ -3,6 +3,25 @@ body {
 }
 
 
+.carousel-inner > .item >img{
+  min-height : 300px;
+  max-height : 300px;
+  width : 100%;
+}
+.carousel > .item >img{
+  min-height : 300px;
+  max-height : 300px;
+  width : 100%;
+} */
+
+/* .container{
+  height:1000px;
+} */
+
+/* .carousel-item {
+  min-height: 10px;
+
+}
 .footer .icon-link {
     font-size: 25px;
     color: #000;

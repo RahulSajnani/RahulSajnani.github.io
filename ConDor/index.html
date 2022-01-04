@@ -8,10 +8,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ConDor: Self-Supervised Canonicalization of 3D Pose for Partial Shapes</title>
 
-  
 
+		<!-- Load Bootstrap -->
+		<!-- <link rel="stylesheet"
+			href=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+			integrity=
+"sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+			crossorigin="anonymous" />
+		<script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+				integrity=
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+				crossorigin="anonymous">
+	</script>
+		<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+				integrity=
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+				crossorigin="anonymous">
+  </script>
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+        rel="stylesheet"> -->
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
@@ -26,6 +44,10 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -145,9 +167,15 @@
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
+    
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
         <h2 class="title is-3">Abstract</h2>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-full">
+            <img src="data/images/teaser.jpg" width="100%" />
+          </div>
+        </div>
         <div class="content has-text-justified">
           <p class="content has-text-justified">
             Progress in 3D object understanding has relied on manually "<i>canonicalized</i>" shape datasets that contain instances with
@@ -159,11 +187,7 @@
       </div>
     </div>
     <!--/ Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full">
-          <img src="data/images/teaser.jpg" width="100%" />
-      </div>
-      </div>
+    
     </div>
     <!--/ Paper video. -->
     </div>
@@ -194,7 +218,7 @@
         </br>
         <div class="content has-text-justified">
           <p>
-            We introduce , <b>ConDor</b> a method for self-supervised category-level
+            We introduce, <b>ConDor</b> a method for self-supervised category-level
             <b><u>C</u></b><b><u>on</u></b>icalization of the 3<b><u>D</u></b> p<b><u>o</u></b>se of
             pa<b><u>r</u></b>tial shapes.
             It consists of a neural network that is trained on an un-canonicalized collection of 3D point clouds with inconsistent
@@ -218,56 +242,43 @@
   </div>
 </section>
 
+<section class = "section">
 
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <!-- <div class="item item-steve"> -->
-          <img src="data/images/ConDor_j_v4.png" width="100%" />
-        <!-- </div> -->
-        <div class="item item-steve">
-          <video poster="" id="klevr" autoplay controls muted loop height="100%">
-            <source src="data/videos/143302444-a09a889a-a864-46e7-bac0-4d627f08eea2.mp4"
-                    type="video/mp4">
-          </video>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Qualitative Results</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="thumbnail">
+            <img src="./data/images/parkinglotplane.png" alt="Lights" style="width:100%">
         </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="toyboxeasy" autoplay controls muted loop height="100%">
-            <source src="data/videos/143302373-7485e04f-309d-442e-b0f3-dfce6f63bb59.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="toyboxhard" autoplay controls muted loop height="100%">
-            <source src="data/videos/143302390-e50d0fe8-f2e0-4115-830d-a7ae867a98b5.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="klevrnext" autoplay controls muted loop height="100%">
-            <source src="data/videos/143304758-fc0d53d3-21b1-4b01-a236-c0ec16f33b64.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="toyboxeasynext" autoplay controls muted loop height="100%">
-            <source src="data/videos/143304771-efd19bb3-9307-4761-8141-b0a9953b835c.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toyboxhardnext" autoplay controls muted loop height="100%">
-            <source src="data/videos/143304808-6c89e452-6cff-48ef-b237-d532688e654e.mp4"
-                    type="video/mp4">
-          </video>
+      </div>
+      <div class="col-md-6">
+        <div class="thumbnail">
+          <img src="./data/images/parkinglotchair.png" alt="Lights" style="width:100%">
         </div>
       </div>
     </div>
-  </div>
-</section>
 
+    <div class="row">
+      <div class="col-md-12">
+        <div class="thumbnail">
+          <img src="./data/images/parkinglotmulti.png" alt="Lights" style="width:100%">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="thumbnail">
+          <img src="./data/images/partparking.png" alt="Lights" style="width:100%">
+        </div>
+      </div>
+    </div>
+</div>
+</div></div>
+</section>
 
 
 <section class="section" id="BibTeX">
@@ -303,6 +314,11 @@
     </div>
   </div>
 </footer>
-
+<!-- <script type='text/javascript' src="/bootstrap.js"></script>
+<script type="text/javascript" src="/functions.js"></script> -->
+<script>
+  //starts the carousel
+  $('#myCarousel').carousel();
+</script>
 </body>
 </html>
