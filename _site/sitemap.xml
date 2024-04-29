@@ -31,6 +31,10 @@
 <lastmod>2021-10-18T00:00:00-07:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/publication/2021-10-18-DRACO</loc>
+<lastmod>2021-10-18T00:00:00-07:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/talks/2012-03-01-talk-1</loc>
 <lastmod>2012-03-01T00:00:00-08:00</lastmod>
 </url>
@@ -94,10 +98,10 @@
 </url>
 <url>
 <loc>http://localhost:4000/ConDor/</loc>
-<lastmod>2022-01-05T04:59:54-08:00</lastmod>
+<lastmod>2024-04-28T22:57:07-07:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/talkmap/map.html</loc>
-<lastmod>2022-01-09T23:32:38-08:00</lastmod>
+<lastmod>2024-04-28T22:57:07-07:00</lastmod>
 </url>
 </urlset>

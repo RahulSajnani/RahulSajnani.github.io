@@ -9,7 +9,7 @@ redirect_from:
 ---
 
 
-I am a Computer Science Ph.D. Candidate at Brown University advised by Prof. Srinath Sridhar. My research revolves around understanding and interpreting 3D shapes for reconstruction, pose estimation, and more!
+I am a Computer Science Ph.D. Candidate at Brown University advised by Prof. Srinath Sridhar. My research revolves around understanding and manipulating objects in the 3D world for robot perception.
 
 Previously, I was a Dual Degree student at Robotics Research Center (RRC), IIIT-H advised by Prof. Madhava Krishna. At RRC, my research focused on learning object-centric features that enable weak and unsupervised pose estimation for SLAM systems. I was also actively involved in developing the self-driving car perception stack at RRC. 
 
@@ -21,11 +21,14 @@ Previously, I was a Dual Degree student at Robotics Research Center (RRC), IIIT-
 - More updates to come soon!
 
 # Publications
+### 2024
+
+- \[P.9\] **Rahul Sajnani**, Jeroen Vanbaar, Jie Min, Kapil Katyal, Srinath Sridhar. GeoDiffuser: Geometry-Based Image Editing with Diffusion Models. In Review. \[[project page](https://ivl.cs.brown.edu/research/geodiffuser.html)\] \[[paper](https://arxiv.org/pdf/2404.14403)\]
 
 ### 2023
 
-- \[P.8\] Rohith Agaram, Shaurya Dewan, **Rahul Sajnani**, Adrien Poulenard, Madhava Krishna, Srinath Sridhar. Canonical Fields: Self-Supervised Learning of Pose-Canonicalized Neural Fields. In Review. \[[paper](https://arxiv.org/pdf/2212.02493.pdf)\]
-- \[P.7\] Qiuhong Anna Wei, Sijie Ding, Jeong Joon Park, **Rahul Sajnani**, Adrien Poulenard, Srinath Sridhar, Leonidas Guibas. LEGO-Net: Learning Regular Rearrangements of Objects in Rooms. In Review. \[[paper](https://arxiv.org/pdf/2301.09629.pdf)\]
+- \[P.8\] Rohith Agaram, Shaurya Dewan, **Rahul Sajnani**, Adrien Poulenard, Madhava Krishna, Srinath Sridhar. Canonical Fields: Self-Supervised Learning of Pose-Canonicalized Neural Fields. IEEE Conference on Computer Vision and Pattern Recognition (CVPR 2022). \[[project page](https://ivl.cs.brown.edu/research/canonical-fields.html)\] \[[paper](https://arxiv.org/pdf/2212.02493.pdf)\] \[[code](https://github.com/brown-ivl/Cafi-Net)\]
+- \[P.7\] Qiuhong Anna Wei, Sijie Ding, Jeong Joon Park, **Rahul Sajnani**, Adrien Poulenard, Srinath Sridhar, Leonidas Guibas. LEGO-Net: Learning Regular Rearrangements of Objects in Rooms. IEEE Conference on Computer Vision and Pattern Recognition (CVPR 2022). \[[project page](https://ivl.cs.brown.edu/research/lego-net.html)\] \[[paper](https://arxiv.org/pdf/2301.09629.pdf)\] \[[code](https://github.com/QiuhongAnnaWei/LEGO-Net)\]
 
 ### 2022
 
