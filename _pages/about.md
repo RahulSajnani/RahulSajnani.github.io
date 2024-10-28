@@ -19,12 +19,12 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
 ---
 
-I am a Computer Science Ph.D. Candidate at Brown University advised by Prof. Srinath Sridhar. My current research interests revolves around understanding and manipulating the implicit learnt representations of vision language foundational models such as Stable Diffusion, Video Diffusion Models, Clip, Dino, and more!
+I am a Computer Science Ph.D. Candidate at Brown University advised by [Srinath Sridhar](https://cs.brown.edu/people/ssrinath/). My current research interests revolves around understanding and manipulating implicit learnt representations of foundational models such as Stable Diffusion, Video Diffusion Models, CLIP, and DinoV2 to extend their capabilities for [geometric editing](https://ivl.cs.brown.edu/research/geodiffuser.html), novel view synthesis, scene reconstruction, and motion control!
 
-<!-- My current research focuses on improving Diffusion models and extend their capabilities in editing, novel view synthesis, and scene reconstruction. -->
+My research also delves into estimating canonical representations of objects \[[1](https://ivl.cs.brown.edu/ConDor/),[2](https://arxiv.org/abs/2011.12912),[3](https://ivl.cs.brown.edu/research/canonical-fields.html)\] and modelling their inter-object interations \[[4](https://ivl.cs.brown.edu/research/lego-net.html)\]. Prior to object understanding, I have also worked on visual localization of automobiles for SLAM and improving mapping for autonomous driving at [RRC, IIIT-Hyderabad](https://robotics.iiit.ac.in/).
 
-Previously, I was a Dual Degree student at Robotics Research Center (RRC), IIIT-H advised by Prof. Madhava Krishna. At RRC, my research focused on learning object-centric features that enable weak and unsupervised pose estimation for SLAM systems. I was also actively involved in developing the self-driving car perception stack at RRC.
 
+I am fortunate to be advised by [Leonidas Guibas](https://geometry.stanford.edu/), [George Konidaris](https://cs.brown.edu/people/gdk/), [Daniel Ritchie](https://dritchie.github.io/), [Jeroen Vanbaar](https://scholar.google.com/citations?user=u8FiVv8AAAAJ&hl=en), [Kapil Katyal](https://kdk132.github.io/), [K. Madhava Krishna](https://robotics.iiit.ac.in/) and [Kavita Vemuri](https://www.iiit.ac.in/faculty/kavitha-vemuri/). 
 
 
 <p style="text-align:center;">
