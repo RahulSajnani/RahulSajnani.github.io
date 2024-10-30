@@ -1,9 +1,9 @@
 ---
 layout: page
-permalink: /assets/pdfs/RahulSajnani_CV.pdf
-title: CV
+permalink: /assets/pdfs/RahulSajnani_Resume.pdf
+title: Resume
 nav: true
-nav_order: 5
+nav_order: 4
 # cv_pdf: 
 # description: 
 # toc:
