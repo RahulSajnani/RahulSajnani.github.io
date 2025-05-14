@@ -1,3 +1,13 @@
+- date: "2025-05-12"
+  inline: true
+  related_posts: false
+  featured: true
+  content: "I received an [Outstanding Reviewer](https://cvpr.thecvf.com/Conferences/2025/ProgramCommittee#all-outstanding-reviewer) award at [CVPR 2025](https://cvpr.thecvf.com/Conferences/2025)! :tada:."
+- date: "2025-04-02"
+  inline: true
+  related_posts: false
+  featured: true
+  content: "Our work [GeoDiffuser](https://ivl.cs.brown.edu/research/geodiffuser.html) received the Best Student Paper at [WACV 2025](https://wacv2025.thecvf.com/) :tada:! Read [article](https://www.rsipvision.com/ComputerVisionNews-2025April/) for more information."
 - date: "2024-10-28"
   inline: true
   related_posts: false
