@@ -26,4 +26,8 @@ group :other_plugins do
     gem 'css_parser'
     gem 'feedjira'
     gem 'httparty'
+    gem 'observer'    # removed from Ruby 4.0 stdlib; needed by jekyll-scholar / html-pipeline
+    gem 'ostruct'     # same reason
+    gem 'logger'      # same reason
+    gem 'benchmark'   # same reason (used by _plugins/google-scholar-citations.rb)
 end

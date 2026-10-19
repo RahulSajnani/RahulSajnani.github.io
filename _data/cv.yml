@@ -2,96 +2,117 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
+      value: Rahul Sajnani
+    - name: Location
+      value: Providence, RI, USA
+    - name: Email
+      value: rahul_sajnani@brown.edu
+    - name: Looking for
+      value: Full-time research roles in robotics foundation models, autonomous driving, generative modeling, and brain–robot interfaces (2026)
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Ph.D. in Computer Science
+      institution: Brown University, Providence, RI
+      year: 2022 - 2026
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - "Advisor: Prof. Srinath Sridhar (Brown Visual Computing / IVL)."
+        - "CGPA 4.0 / 4.0."
+        - "Thesis topic: generative world models for embodied robot control."
+    - title: B.Tech. & M.Sc. in Electronics and Communication Engineering
+      institution: IIIT Hyderabad, India
+      year: 2017 - 2022
       description:
-        - Description 1.
-        - Description 2.
+        - "Dual degree (B.Tech. + M.Sc. by Research)."
+        - "Gold Medal (highest standing in ECE)."
+        - "Dean's List; CGPA 9.1 / 10."
+        - "M.Sc. research at the Robotics Research Center with Prof. K. Madhava Krishna."
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Applied Scientist II Intern
+      institution: Amazon Robotics, North Reading, MA
+      year: Jun 2024 - Jan 2026
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - "Led the UniWALM project — a unified world-action-language model for memory-dependent robot manipulation. Mixture-of-Transformers (Wan2.2 video backbone + action DiT + discrete-diffusion language expert) co-generates future video, robot action, and natural-language memory in a single parallel diffusion pass."
+        - "Real-world memory-dependent manipulation: 11.1% → 61.1% vs same-backbone FastWAM; 34.5% on RMBench, beating Mem-0's privileged-keyframe setup (28.5%) without pretrained VLMs."
+        - "Designed bimanual and memory-dependent data-collection pipelines (Shadow Hand, Franka Panda, AgileX dual-arm in sim); authored unified-WAM design docs adopted cross-team."
+        - "Managers: Jeroen Vanbaar, Jose Barreiros, Manikantan Nambi."
+    - title: Research Scientist Intern
+      institution: Adobe Research, San Jose, CA
+      year: May 2025 - Aug 2025
       description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
+        - "Developed AppearancePointers — a FLUX-based model for multimodal multi-region control where each output region is independently steered by text, reference image, or material texture in a single denoising pass."
+        - "State-of-the-art on three multi-region fidelity metrics, beating DreamRenderer and MSDiffusion at substantially larger scale."
+        - "Curated the AP-37K multimodal dataset."
+        - "Advisors: Matheus Gadelha, Radomír Měch."
+    - title: Graduate Researcher
+      institution: Brown Visual Computing (IVL), Brown University
+      year: Sep 2022 - Present
       description:
+        - "3D structure for perception & generation: SO(3)-equivariant pose on partial point clouds (ConDor, CVPR 2022) and NeRFs (Cafi-Net, CVPR 2023 Highlight); regularity-aware scene rearrangement (LEGO-Net, CVPR 2023)."
+        - "GeoDiffuser — training-free geometry-based image editing with diffusion models (WACV 2025, Best Student Paper, invited talk)."
+        - "Currently: feed-forward 3D Gaussian Splatting from a single monocular video by distilling video-diffusion backbones (Wan2.1, LTX-Video, CogVideoX)."
+        - "Advisors: Prof. Srinath Sridhar and Prof. Leonidas Guibas (Stanford)."
+    - title: Undergraduate / M.Sc. Researcher
+      institution: Robotics Research Center (RRC), IIIT Hyderabad
+      year: Aug 2019 - May 2022
+      description:
+        - "Designed the full self-driving perception stack of the RRC autonomous vehicle platform."
+        - "DRACO — weakly-supervised dense pose canonicalization (IEEE ICRA 2021)."
+        - "Multi-object monocular SLAM for dynamic driving scenes (IEEE IV 2020)."
+        - "BirdSLAM — monocular multibody SLAM in bird's-eye view (VISIGRAPP 2021)."
+        - "Head Organizer, Robotics Summer School 2021."
+        - "Advisor: Prof. K. Madhava Krishna."
 
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
+- title: Selected Honors & Awards
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - year: 2025
+      items:
+        - WACV 2025 Best Student Paper (GeoDiffuser) + invited talk.
+        - CVPR 2025 Outstanding Reviewer.
+    - year: 2022
+      items:
+        - Gold Medal, IIIT Hyderabad (highest standing in ECE).
+        - Dean's List.
 
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
-
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
+- title: Teaching & Service
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - "Co-Instructor, <a href='https://browncsci2952k.github.io/'>Topics in 3D Computer Vision & Machine Learning (CSCI 2952K)</a>, Brown University (2025)."
+    - "Head Organizer, <a href='https://sprinkle-yam-c8c.notion.site/Robotics-Research-Center-Summer-Sessions-2021-da2210bce3994d64b72c5f545ce0472a'>RRC Robotics Summer School 2021</a>, IIIT-Hyderabad."
+    - "Reviewer: CVPR, ICCV, ECCV, ICLR, SIGGRAPH, WACV, ICRA."
+
+- title: Research Interests
+  type: nested_list
+  contents:
+    - title: Robotics foundation models
+      items:
+        - World-Action-Language models and memory-aware policies.
+        - VLAs, diffusion policies, flow-matching for action generation.
+        - Long-horizon and bimanual manipulation.
+    - title: Autonomous driving
+      items:
+        - Monocular / multi-object SLAM for dynamic urban scenes.
+        - Bird's-eye-view perception and 3D canonicalization.
+        - End-to-end driving world models.
+    - title: Generative modeling
+      items:
+        - Controllable diffusion / flow-matching models for images, video, and 3D.
+        - Steering internal representations of pretrained generative models (training-free).
+        - Multi-region / multi-modal conditional generation.
+    - title: Brain–robot interfaces
+      items:
+        - Generative priors for low-dimensional neural control signals.
+        - Decoding intent from multimodal signals into robot action.
+
+- title: Skills
+  type: list
+  contents:
+    - "<u>Languages:</u> Python, C++, CUDA, MATLAB, LaTeX."
+    - "<u>ML frameworks:</u> PyTorch, JAX, HuggingFace Diffusers, PyTorch Lightning, Weights & Biases."
+    - "<u>Robotics / simulation:</u> ROS, Isaac Sim / Lab, MuJoCo, PyBullet, Franka Panda, Shadow Hand, AgileX dual-arm."
+    - "<u>Generative / 3D stacks:</u> Stable Diffusion, FLUX, Wan2.1/2.2, LTX-Video, CogVideoX, NeRF / 3D Gaussian Splatting."

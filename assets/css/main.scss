@@ -23,3 +23,399 @@ $max-content-width: {{ site.max_width }};
   "tabler-icons/tabler-icons-filled.scss",
   "tabler-icons/tabler-icons-outline.scss"
 ;
+
+/* ----------------------------------------------------------------------------
+ * Minimalistic, compact typography overrides.
+ * Keeps al-folio structure but shrinks sizes and whitespace.
+ * -------------------------------------------------------------------------- */
+
+html {
+  font-size: 15.5px;            // between stock 16px and compact 15px
+}
+
+body {
+  line-height: 1.55;
+  letter-spacing: 0.005em;
+}
+
+.post .post-title {
+  font-size: 2.1rem;            // name header: was ~2.5rem+
+  font-weight: 600;
+  margin-top: 0.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.post .post-description,
+.post .desc {
+  font-size: 0.9rem;
+  margin-bottom: 1.2rem;
+}
+
+/* About page prose: tighter rhythm, slightly smaller headings. */
+.post article {
+  h1 { font-size: 1.6rem; font-weight: 600; margin-top: 1.3rem; }
+  h2 { font-size: 1.3rem; font-weight: 600; margin-top: 1.2rem; }
+  h3 { font-size: 1.08rem; font-weight: 600; margin-top: 1.1rem; margin-bottom: 0.5rem; }
+  h4 { font-size: 1rem;    font-weight: 600; }
+
+  p, li {
+    font-size: 0.95rem;
+    margin-bottom: 0.7rem;
+  }
+  ul, ol { margin-bottom: 0.9rem; }
+}
+
+/* News list: compact one-liners. */
+.news .table td { font-size: 0.88rem; padding: 2px 0.6rem 2px 0; }
+
+/* Publications list: tighter cards. */
+.publications {
+  margin-top: 1.2rem;
+
+  h1 { font-size: 1.5rem; margin: 0.6em 0 0.6em; }
+  h2.year { font-size: 1.1rem; }
+
+  ol.bibliography li {
+    margin-bottom: 0.6rem;
+    font-size: 0.92rem;
+
+    .title    { font-size: 0.98rem; }
+    .author   { font-size: 0.9rem; }
+    .periodical { font-size: 0.85rem; }
+    .links a.btn {
+      font-size: 0.75rem;
+      padding: 0.1rem 0.55rem;
+    }
+  }
+}
+
+/* Profile image smaller / tighter margin. */
+@media (min-width: 576px) {
+  .profile { width: 19%; }
+  .profile img { width: 100%; border-radius: 6px; }
+}
+
+/* Inline link row (icons + text) under the intro. */
+.link-row {
+  a {
+    color: var(--global-text-color);
+    text-decoration: none;
+    white-space: nowrap;
+
+    i { color: var(--global-theme-color); }
+
+    &:hover {
+      color: var(--global-theme-color);
+      text-decoration: none;
+      i { color: var(--global-hover-color); }
+    }
+  }
+}
+
+/* ---- Global light-mode easing (softer paper color) ---------------------- */
+:root,
+html[data-theme="light"] {
+  --global-bg-color: #ecedee;             /* soft neutral gray, easier on eyes */
+  --global-card-bg-color: #f4f5f6;        /* slightly lighter for cards */
+  --global-divider-color: rgba(0,0,0,0.10);
+  --global-code-bg-color: rgba(0,0,0,0.05);
+}
+
+/* ---- Pub-card palette (theme-aware) ------------------------------------- */
+:root,
+html[data-theme="light"] {
+  --pub-card-bg:      #f4f5f6;
+  --pub-card-border:  rgba(0,0,0,0.08);
+  --pub-shadow-hover: 0 6px 24px rgba(0,0,0,0.08);
+  --pub-self-color:   #b22222;
+
+  --pill-venue-bg:   #e8f5ee;  --pill-venue-fg:   #2d6a4f;
+  --pill-arxiv-bg:   #fce8e8;  --pill-arxiv-fg:   #b22222;
+  --pill-project-bg: #e8eef8;  --pill-project-fg: #3366aa;
+  --pill-code-bg:    #f0eee8;  --pill-code-fg:    #8a7040;
+  --pill-pdf-bg:     #f3e8f8;  --pill-pdf-fg:     #6a3b8f;
+  --pill-award-bg:   #fff7d6;  --pill-award-fg:   #8a6d00;
+  --pill-default-bg: #eceff1;  --pill-default-fg: #37474f;
+
+  /* TL;DR callout — soft neutral cream with muted accent. */
+  --tldr-bg:         #f5f1e8;
+  --tldr-border:     #d9ceb6;
+  --tldr-text:       #3a3429;
+  --tldr-accent:     #8a6a2f;
+  --tldr-bullet:     #a07f3a;
+  --tldr-badge-bg:   #8a6a2f;
+  --tldr-badge-fg:   #ffffff;
+}
+
+html[data-theme="dark"] {
+  --pub-card-bg:      rgba(255,255,255,0.03);
+  --pub-card-border:  rgba(255,255,255,0.08);
+  --pub-shadow-hover: 0 6px 24px rgba(0,0,0,0.45);
+  --pub-self-color:   #ff8e8e;
+
+  --pill-venue-bg:   rgba(80,180,120,0.15);  --pill-venue-fg:   #7bd1a2;
+  --pill-arxiv-bg:   rgba(220,80,80,0.15);   --pill-arxiv-fg:   #ff8e8e;
+  --pill-project-bg: rgba(90,140,220,0.17);  --pill-project-fg: #8bb3f0;
+  --pill-code-bg:    rgba(190,170,110,0.17); --pill-code-fg:    #d8c48a;
+  --pill-pdf-bg:     rgba(170,110,200,0.17); --pill-pdf-fg:     #c89cf0;
+  --pill-award-bg:   rgba(220,180,60,0.17);  --pill-award-fg:   #ead27a;
+  --pill-default-bg: rgba(255,255,255,0.08); --pill-default-fg: #c8d1d8;
+
+  /* TL;DR callout — subtle warm overlay for dark bg. */
+  --tldr-bg:         rgba(229,180,95,0.08);
+  --tldr-border:     rgba(229,180,95,0.35);
+  --tldr-text:       #d9e0e6;
+  --tldr-accent:     #f0c674;
+  --tldr-bullet:     #e5b45f;
+  --tldr-badge-bg:   #e5b45f;
+  --tldr-badge-fg:   #1a1a1a;
+}
+
+/* ---- Featured Publications: card layout (theme-aware) ------------------- */
+.publications {
+  margin-top: 1rem;
+
+  ol.bibliography {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    > li {
+      list-style: none;
+      background: var(--pub-card-bg);
+      border: 1px solid var(--pub-card-border);
+      border-radius: 10px;
+      padding: 20px 22px;
+      transition: box-shadow 0.18s ease-in-out, transform 0.18s ease-in-out, border-color 0.18s ease-in-out;
+
+      &:hover {
+        box-shadow: var(--pub-shadow-hover);
+        transform: translateY(-2px);
+        border-color: transparent;
+      }
+
+      /* Reset the Bootstrap row to a flex row. */
+      > .row {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 22px;
+        margin: 0;
+      }
+
+      /* Thumbnail — 200px wide landscape. */
+      .col-sm-2,
+      .col-sm-2.abbr {
+        flex: 0 0 200px;
+        max-width: 200px;
+        padding: 0;
+      }
+      .preview {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 140px;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+      }
+
+      /* Info column. */
+      .col-sm-8,
+      .col-sm-10 {
+        flex: 1 1 auto;
+        min-width: 0;
+        max-width: none;
+        padding: 0;
+      }
+
+      .title {
+        font-size: 1rem;         // ~15.5px
+        font-weight: 600;
+        line-height: 1.4;
+        margin-bottom: 0.3rem;
+        color: var(--global-text-color);
+      }
+
+      .author {
+        font-size: 0.88rem;
+        line-height: 1.55;
+        color: var(--global-text-color-light);
+        margin-bottom: 0.1rem;
+
+        em {              // Self-author (al-folio emits <em> for site author)
+          color: var(--pub-self-color);
+          font-weight: 600;
+          font-style: normal;
+          border-bottom: none;
+        }
+        a {
+          color: var(--global-text-color-light);
+          border-bottom: none;
+          &:hover { color: var(--global-theme-color); }
+        }
+      }
+
+      .periodical {
+        display: block;
+        font-size: 0.82rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.6rem;
+        color: var(--global-text-color-light);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.4;
+
+        em { font-style: italic; font-weight: 500; color: var(--global-text-color-light); }
+        strong { font-weight: 600; color: var(--global-text-color); }
+      }
+
+      /* Link row — colored pills, no outlines. */
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 0.3rem;
+
+        a.btn {
+          font-size: 0.76rem !important;
+          font-weight: 600;
+          padding: 2px 10px !important;
+          border-radius: 4px !important;
+          border: none !important;
+          text-transform: none;
+          letter-spacing: 0;
+          background: var(--pill-default-bg) !important;
+          color: var(--pill-default-fg) !important;
+          margin: 0;
+          box-shadow: none;
+
+          &:hover { filter: brightness(0.95); }
+        }
+
+        a.btn[href*="arxiv"]  { background: var(--pill-arxiv-bg)   !important; color: var(--pill-arxiv-fg)   !important; }
+        a.btn[href*="github"],
+        a.btn[href$=".git"]   { background: var(--pill-code-bg)    !important; color: var(--pill-code-fg)    !important; }
+        a.btn[href$=".pdf"],
+        a.btn[href*=".pdf"]   { background: var(--pill-pdf-bg)     !important; color: var(--pill-pdf-fg)     !important; }
+
+        a.btn.abstract,
+        a.btn.bibtex          { background: var(--pill-default-bg) !important; color: var(--pill-default-fg) !important; }
+
+        a.btn.award {
+          background: var(--pill-award-bg) !important;
+          color: var(--pill-award-fg) !important;
+          font-weight: 700;
+        }
+
+        // Webpage / Project links — blue family.
+        a.btn[href*="ivl.cs.brown.edu"],
+        a.btn[href*="brown.edu"],
+        a.btn[href*="project"],
+        a.btn[href*="pages.github.io"] {
+          background: var(--pill-project-bg) !important;
+          color: var(--pill-project-fg) !important;
+        }
+      }
+
+      // Expanded abstract / bibtex blocks: keep al-folio defaults but tighter.
+      .abstract, .bibtex { font-size: 0.85rem; }
+
+      /* --- TL;DR bullet block (note={<ul class="tldr">...}) --- */
+      ul.tldr {
+        list-style: none;
+        margin: 0.7rem 0 0.2rem;
+        padding: 0.75rem 0.9rem 0.75rem 1.1rem;
+        position: relative;
+        background: var(--tldr-bg);
+        border: 1px solid var(--tldr-border);
+        border-left: 3px solid var(--tldr-badge-bg);
+        border-radius: 6px;
+        font-size: 0.86rem;
+        color: var(--tldr-text);
+        line-height: 1.55;
+
+        &::before {
+          content: "TL;DR";
+          position: absolute;
+          top: -9px;
+          left: 10px;
+          font-size: 0.68rem;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          padding: 1px 7px;
+          background: var(--tldr-badge-bg);
+          color: var(--tldr-badge-fg);
+          border-radius: 4px;
+          text-transform: uppercase;
+        }
+
+        li {
+          position: relative;
+          padding-left: 1rem;
+          margin: 0.18rem 0;
+
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.6em;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--tldr-bullet);
+          }
+        }
+
+        b, strong { font-weight: 600; color: var(--tldr-accent); }
+      }
+    }
+  }
+
+  // Section heading inside .publications
+  h1 { font-size: 1.4rem; font-weight: 600; margin: 0.6em 0 0.5em; text-align: left; color: var(--global-text-color); }
+  h2.bibliography { font-size: 1rem; }
+}
+
+/* Mobile: stack preview above info, full-width thumb. */
+@media (max-width: 575px) {
+  .publications ol.bibliography > li > .row {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .publications ol.bibliography > li .col-sm-2,
+  .publications ol.bibliography > li .col-sm-2.abbr {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .publications ol.bibliography > li .preview {
+    max-height: 180px;
+    width: 100% !important;
+  }
+}
+
+/* Social icon row: compact + hover polish. */
+.social {
+  margin-top: 1.2rem;
+  text-align: center;
+
+  .contact-icons {
+    font-size: 1.6rem;              // was 4rem
+    line-height: 2.2rem;
+
+    a {
+      margin: 0 0.35rem;
+      i::before {
+        transition: color 0.15s ease-in-out, transform 0.15s ease-in-out;
+      }
+      &:hover i::before {
+        color: var(--global-theme-color);
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  .contact-note { font-size: 0.75rem; margin-top: 0.4rem; }
+}
+
