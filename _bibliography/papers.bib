@@ -122,7 +122,7 @@
       selected={true},
       bibtex_show={true},
       preview={uniwalm.gif},
-      webpage={https://ivl.cs.brown.edu/research/uniwalm/},
+      webpage={/projects/uniwalm/},
       note={<ul class="tldr"><li>Mixture-of-Transformers (Wan2.2 video + action DiT + <b>discrete-diffusion language expert</b>) co-generates video, action, and language in <b>one parallel diffusion pass</b>.</li><li>Policy re-reads its own generated language as <b>memory</b> on every control step — no external VLM / planner.</li><li>Real-world memory-dependent manipulation: <b>11.1% → 61.1%</b> vs same-backbone FastWAM.</li><li><b>34.5%</b> on RMBench, above Mem-0's privileged-keyframe setup (28.5%).</li></ul>},
       abstract={A mixture-of-transformers (Wan2.2 video backbone + action DiT + discrete-diffusion language expert) co-generates future video, robot action, and a short natural-language memory in a single parallel diffusion pass; the policy re-reads the memory on every control step. 11.1% to 61.1% on real-world memory-dependent manipulation vs same-backbone FastWAM; 34.5% on RMBench, beating Mem-0's privileged-keyframe setup (28.5%).}
 }
@@ -135,7 +135,7 @@
       selected={true},
       bibtex_show={true},
       preview={appearance_pointers.png},
-      webpage={https://ivl.cs.brown.edu/research/appearance_pointers.html},
+      webpage={/projects/appearance_pointers/},
       note={<ul class="tldr"><li>FLUX-based model for <b>multi-region controllable generation</b>: each output region independently steered by text, reference image, and material texture in a single denoising pass.</li><li><b>State-of-the-art</b> on three multi-region fidelity metrics, beating DreamRenderer and MSDiffusion at larger scale.</li><li>Introduces the curated <b>AP-37K</b> multimodal dataset.</li></ul>},
       abstract={FLUX-based model for multimodal region control: each output region is independently steered by any mix of text, reference image, and material texture in a single denoising pass. State-of-the-art on three multi-region fidelity metrics; introduces the curated AP-37K multimodal dataset.}
 }
@@ -167,7 +167,7 @@
       bibtex_show={true},
       arxiv={2404.14403},
       preview={GeoDiffuser_edit.gif},
-      webpage={https://ivl.cs.brown.edu/research/geodiffuser.html},
+      webpage={/projects/geodiffuser/},
       code={https://github.com/RahulSajnani/GeoDiffuser},
       additional_info={ (**Best Student Paper**)},
       note={<ul class="tldr"><li><b>Training-free</b> geometry-based image editing on a frozen T2I diffusion model.</li><li>User specifies a <b>3D rigid transform</b> (rotate, translate, scale); GeoDiffuser rewrites attention maps to realize it.</li><li>No fine-tuning, no 3D supervision — WACV 2025 <b>Best Student Paper + invited talk</b>.</li></ul>}
