@@ -3,7 +3,7 @@ layout: page
 title: Projects
 permalink: /projects/
 description: Selected research projects spanning robotics foundation models, autonomous driving perception, and controllable generative models.
-nav: false
+nav: true
 nav_order: 3
 display_categories: [work]
 horizontal: false

@@ -115,8 +115,8 @@ body {
 /* ---- Global light-mode easing (softer paper color) ---------------------- */
 :root,
 html[data-theme="light"] {
-  --global-bg-color: #ecedee;             /* soft neutral gray, easier on eyes */
-  --global-card-bg-color: #f4f5f6;        /* slightly lighter for cards */
+  --global-bg-color: #fbfbfc;             /* near-white, barely tinted neutral */
+  --global-card-bg-color: #ffffff;        /* cards sit bright on page */
   --global-divider-color: rgba(0,0,0,0.10);
   --global-code-bg-color: rgba(0,0,0,0.05);
 }
@@ -124,7 +124,7 @@ html[data-theme="light"] {
 /* ---- Pub-card palette (theme-aware) ------------------------------------- */
 :root,
 html[data-theme="light"] {
-  --pub-card-bg:      #f4f5f6;
+  --pub-card-bg:      #ffffff;
   --pub-card-border:  rgba(0,0,0,0.08);
   --pub-shadow-hover: 0 6px 24px rgba(0,0,0,0.08);
   --pub-self-color:   #b22222;
