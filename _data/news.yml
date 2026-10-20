@@ -3,16 +3,6 @@
   related_posts: false
   featured: true
   content: "**I am on the industry job market!** Looking for full-time research roles in robotics foundation models, autonomous driving, generative modeling, and brain–robot interfaces. [Reach out](mailto:rahul_sajnani@brown.edu)."
-- date: "2026-01-15"
-  inline: true
-  related_posts: false
-  featured: true
-  content: "Completed my Applied Scientist II internship at [Amazon Robotics](https://www.amazon.science/tag/amazon-robotics) (Jun 2024 – Jan 2026) where I led the UniWALM project on memory-dependent robot manipulation."
-- date: "2025-08-15"
-  inline: true
-  related_posts: false
-  featured: true
-  content: "Finished my Research Scientist internship at [Adobe Research](https://research.adobe.com/) with Matheus Gadelha on **AppearancePointers** — fine-grained multi-region control for FLUX-based image generation."
 - date: "2025-05-12"
   inline: true
   related_posts: false

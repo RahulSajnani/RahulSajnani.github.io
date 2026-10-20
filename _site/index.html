@@ -154,27 +154,7 @@
             
           
             
-              
-                
-                <li class="nav-item ">
-                  
-                  <a class="nav-link" href="/assets/pdfs/RahulSajnani_Resume.pdf">Resume
-                    
-                  </a>
-                </li>
-              
-            
           
-            
-              
-                
-                <li class="nav-item ">
-                  
-                  <a class="nav-link" href="/assets/pdfs/RahulSajnani_CV.pdf">CV
-                    
-                  </a>
-                </li>
-              
             
           
             
@@ -258,25 +238,67 @@
 
 <p>Previously: <strong>Applied Scientist II Intern</strong> at <a href="https://www.amazon.science/tag/amazon-robotics" rel="external nofollow noopener" target="_blank">Amazon Robotics</a> (2024–2026), <strong>Research Scientist Intern</strong> at <a href="https://research.adobe.com/" rel="external nofollow noopener" target="_blank">Adobe Research</a> (Summer 2025), and lead of the self-driving car perception stack at <a href="https://robotics.iiit.ac.in/" rel="external nofollow noopener" target="_blank">RRC, IIIT-Hyderabad</a>. B.Tech + M.Sc. (ECE Gold Medal) from IIIT-H.</p>
 
-<p>I am <strong>on the industry job market (2026)</strong> for research roles in robotics foundation models, autonomous driving, generative modeling, and brain–robot interfaces.</p>
+<p>I am <strong>on the industry job market (2026)</strong> for research roles in robotics foundation models, autonomous driving, and generative modeling (also curious about brain–robot interfaces).</p>
 
 <h3 id="research-focus">Research focus</h3>
 
-<ul>
+<ul class="research-focus">
   <li>
-<strong>Robotics foundation models</strong> — world-action-language models, memory-aware policies, diffusion/flow-matching for action. [<a href="https://ivl.cs.brown.edu/research/uniwalm/" rel="external nofollow noopener" target="_blank">UniWALM</a>]</li>
+<span class="rf-icon"><i class="fa-solid fa-robot"></i></span><div>
+<strong>Robotics foundation models</strong> — world-action-language models, memory-aware policies, diffusion/flow-matching for action, and sample-efficient RL fine-tuning. [<a href="/projects/uniwalm/">UniWALM</a>, <a href="https://anchorq-rl.com/" rel="external nofollow noopener" target="_blank">AnchorQ</a>]</div>
+</li>
   <li>
-<strong>Perception for autonomous driving</strong> — monocular SLAM and multi-object tracking for dynamic urban scenes. [<a href="https://arxiv.org/abs/2002.03528" rel="external nofollow noopener" target="_blank">MoM-SLAM</a>, <a href="https://arxiv.org/abs/2011.07613" rel="external nofollow noopener" target="_blank">BirdSLAM</a>]</li>
+<span class="rf-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span><div>
+<strong>Controllable generative models</strong> — steering diffusion internals for geometry, 3D, and multi-region control. [<a href="/projects/geodiffuser/">GeoDiffuser</a> · WACV '25 Best Student Paper, <a href="/projects/appearance_pointers/">AppearancePointers</a>]</div>
+</li>
   <li>
-<strong>Controllable generative priors</strong> — steering diffusion internals for geometry, 3D, and multi-region control. [<a href="https://ivl.cs.brown.edu/research/geodiffuser.html" rel="external nofollow noopener" target="_blank">GeoDiffuser</a> · WACV ‘25 Best Student Paper, <a href="https://ivl.cs.brown.edu/research/appearance_pointers.html" rel="external nofollow noopener" target="_blank">AppearancePointers</a>]</li>
+<span class="rf-icon"><i class="fa-solid fa-cube"></i></span><div>
+<strong>Canonicalization &amp; 3D understanding</strong> — SO(3)-equivariant pose estimation on partial shapes and NeRFs, feed-forward 3D Gaussian Splatting from monocular video via video-diffusion priors (Wan2.1, LTX-Video, CogVideoX), regularity-aware scene composition, and dense reconstruction. [<a href="https://ivl.cs.brown.edu/ConDor/" rel="external nofollow noopener" target="_blank">ConDor</a>, <a href="https://ivl.cs.brown.edu/research/canonical-fields.html" rel="external nofollow noopener" target="_blank">Canonical Fields</a> (CVPR Highlight), <a href="https://ivl.cs.brown.edu/research/lego-net.html" rel="external nofollow noopener" target="_blank">LEGO-Net</a>, <a href="https://arxiv.org/abs/2011.12912" rel="external nofollow noopener" target="_blank">DRACO</a>]</div>
+</li>
+  <li>
+<span class="rf-icon"><i class="fa-solid fa-car-side"></i></span><div>
+<strong>Perception for autonomous driving</strong> — monocular SLAM and multi-object tracking for dynamic urban scenes. [<a href="https://arxiv.org/abs/2002.03528" rel="external nofollow noopener" target="_blank">MoM-SLAM</a>, <a href="https://arxiv.org/abs/2011.07613" rel="external nofollow noopener" target="_blank">BirdSLAM</a>]</div>
+</li>
 </ul>
+
+<p style="margin: 0.4rem 0 1rem; font-size: 0.92rem; color: var(--global-text-color-light);">
+<i class="fa-solid fa-brain" style="margin-right:0.4rem;"></i>
+Also curious about <strong>brain–robot interfaces</strong>: using generative priors to decode intent from neural signals into robot action. Open to collaborating / joining a team already working here.
+</p>
+
+<style>
+  .research-focus { list-style: none; padding: 0; margin: 0.4rem 0 1rem; }
+  .research-focus li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    margin-bottom: 0.55rem;
+  }
+  .research-focus .rf-icon {
+    flex: 0 0 1.7rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 6px;
+    background: rgba(0,0,0,0.06);
+    color: var(--global-theme-color);
+    font-size: 0.9rem;
+    margin-top: 0.1rem;
+  }
+  html[data-theme="dark"] .research-focus .rf-icon { background: rgba(255,255,255,0.06); }
+</style>
 
 <p>Collaborators &amp; mentors: <a href="https://cs.brown.edu/people/ssrinath/" rel="external nofollow noopener" target="_blank">Srinath Sridhar</a>, <a href="https://geometry.stanford.edu/" rel="external nofollow noopener" target="_blank">Leonidas Guibas</a>, <a href="https://cs.brown.edu/people/gdk/" rel="external nofollow noopener" target="_blank">George Konidaris</a>, <a href="https://dritchie.github.io/" rel="external nofollow noopener" target="_blank">Daniel Ritchie</a>, <a href="https://scholar.google.com/citations?user=u8FiVv8AAAAJ&amp;hl=en" rel="external nofollow noopener" target="_blank">Jeroen Vanbaar</a>, <a href="https://kdk132.github.io/" rel="external nofollow noopener" target="_blank">Kapil Katyal</a>, <a href="https://robotics.iiit.ac.in/" rel="external nofollow noopener" target="_blank">K. Madhava Krishna</a>, <a href="http://mgadelha.me/" rel="external nofollow noopener" target="_blank">Matheus Gadelha</a>, <a href="https://www.iiit.ac.in/faculty/kavitha-vemuri/" rel="external nofollow noopener" target="_blank">Kavita Vemuri</a>.</p>
 
 <p class="link-row" style="text-align:center; font-size: 0.92rem; margin-top: 1.2rem;">
-<a href="/assets/pdfs/RahulSajnani_Resume.pdf"><i class="fa-regular fa-file-lines"></i> <strong>Resume</strong></a>
- /  <a href="/assets/pdfs/RahulSajnani_CV.pdf"><i class="fa-solid fa-graduation-cap"></i> <strong>CV</strong></a>
- /  <a href="https://scholar.google.com/citations?user=HAtfBjoAAAAJ&amp;hl=en" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar"></i> Google Scholar</a>
+<!-- Resume + CV temporarily hidden
+<a href="/assets/pdfs/RahulSajnani_Resume.pdf"><i class="fa-regular fa-file-lines"></i>&nbsp;<strong>Resume</strong></a>
+&nbsp;/&nbsp; <a href="/assets/pdfs/RahulSajnani_CV.pdf"><i class="fa-solid fa-graduation-cap"></i>&nbsp;<strong>CV</strong></a>
+&nbsp;/&nbsp;
+-->
+<a href="https://scholar.google.com/citations?hl=en&amp;user=HAtfBjoAAAAJ&amp;view_op=list_works&amp;sortby=pubdate" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar"></i> Google Scholar</a>
  /  <a href="mailto:rahul_sajnani@brown.edu"><i class="fa-regular fa-envelope"></i> Email</a>
  /  <a href="https://github.com/RahulSajnani" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
  /  <a href="https://x.com/rahulsajnani2" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-x-twitter"></i> X</a>
@@ -304,30 +326,6 @@
             <td>
               
                 <strong>I am on the industry job market!</strong> Looking for full-time research roles in robotics foundation models, autonomous driving, generative modeling, and brain–robot interfaces. <a href="mailto:rahul_sajnani@brown.edu">Reach out</a>.
-
-              
-            </td>
-          </tr>
-        
-        
-        
-          <tr>
-            <th scope="row" style="width: 20%">Jan 15, 2026</th>
-            <td>
-              
-                Completed my Applied Scientist II internship at <a href="https://www.amazon.science/tag/amazon-robotics" rel="external nofollow noopener" target="_blank">Amazon Robotics</a> (Jun 2024 – Jan 2026) where I led the UniWALM project on memory-dependent robot manipulation.
-
-              
-            </td>
-          </tr>
-        
-        
-        
-          <tr>
-            <th scope="row" style="width: 20%">Aug 15, 2025</th>
-            <td>
-              
-                Finished my Research Scientist internship at <a href="https://research.adobe.com/" rel="external nofollow noopener" target="_blank">Adobe Research</a> with Matheus Gadelha on <strong>AppearancePointers</strong> — fine-grained multi-region control for FLUX-based image generation.
 
               
             </td>
@@ -471,7 +469,7 @@
       https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
     -->
     
-    <img src="/assets/img/publication_preview/uniwalm.gif" class="preview z-depth-1 rounded" width="100%" height="auto" alt="uniwalm.gif" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+    <img src="/assets/img/publication_preview/uniwalm.png" class="preview z-depth-1 rounded" width="100%" height="auto" alt="uniwalm.png" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
   </picture>
 
   
@@ -519,7 +517,7 @@
     
     
     <div class="periodical">
-      <em>IEEE International Conference on Robotics and Automation (ICRA), 2027 (Under Review)</em>,  2026
+      <em>IEEE International Conference on Robotics and Automation (ICRA) (Under Review)</em>,  2027
     </div>
     <div class="periodical">
       <ul class="tldr">
@@ -585,8 +583,8 @@
         <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@article</span><span class="p">{</span><span class="nl">sajnani2026uniwalm</span><span class="p">,</span>
   <span class="na">title</span> <span class="p">=</span> <span class="s">{UniWALM: A Unified World-Action-Language Model for Embodied Robot Control}</span><span class="p">,</span>
   <span class="na">author</span> <span class="p">=</span> <span class="s">{Sajnani, Rahul and Romeres, Diego and Zhang, Mingyuan and Gao, Kai and Qi, Carl and Huang, Baichuan and Sridhar, Srinath and Randle, Dylan and Ratliff, Lillian J. and Barreiros, Jose and Nambi, Manikantan and Vanbaar, Jeroen}</span><span class="p">,</span>
-  <span class="na">year</span> <span class="p">=</span> <span class="s">{2026}</span><span class="p">,</span>
-  <span class="na">journal</span> <span class="p">=</span> <span class="s">{IEEE International Conference on Robotics and Automation (ICRA), 2027 (Under Review)}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2027}</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">{IEEE International Conference on Robotics and Automation (ICRA) (Under Review)}</span><span class="p">,</span>
   <span class="na">webpage</span> <span class="p">=</span> <span class="s">{/projects/uniwalm/}</span><span class="p">,</span>
   <span class="na">note</span> <span class="p">=</span> <span class="s">{&lt;ul class="tldr"&gt;&lt;li&gt;Mixture-of-Transformers (Wan2.2 video + action DiT + &lt;b&gt;discrete-diffusion language expert&lt;/b&gt;) co-generates video, action, and language in &lt;b&gt;one parallel diffusion pass&lt;/b&gt;.&lt;/li&gt;&lt;li&gt;Policy re-reads its own generated language as &lt;b&gt;memory&lt;/b&gt; on every control step — no external VLM / planner.&lt;/li&gt;&lt;li&gt;Real-world memory-dependent manipulation: &lt;b&gt;11.1% → 61.1%&lt;/b&gt; vs same-backbone FastWAM.&lt;/li&gt;&lt;li&gt;&lt;b&gt;34.5%&lt;/b&gt; on RMBench, above Mem-0's privileged-keyframe setup (28.5%).&lt;/li&gt;&lt;/ul&gt;}</span>
 <span class="p">}</span></code></pre></figure>
@@ -753,7 +751,7 @@
       https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
     -->
     
-    <img src="/assets/img/publication_preview/flowreversed.gif" class="preview z-depth-1 rounded" width="100%" height="auto" alt="flowreversed.gif" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+    <img src="/assets/img/publication_preview/anchorq.gif" class="preview z-depth-1 rounded" width="100%" height="auto" alt="anchorq.gif" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
   </picture>
 
   
@@ -800,7 +798,7 @@
     
     
     <div class="periodical">
-      <em>arXiv preprint arXiv:2610.22852</em>,  2026
+      <em>International Conference on Learning Representations (ICLR), 2027 (Under Review)</em>,  2027
     </div>
     <div class="periodical">
       <ul class="tldr">
@@ -819,6 +817,8 @@
       
         <a href="http://arxiv.org/abs/2610.22852" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
       
+      
+        <a href="https://anchorq-rl.com/" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">webpage</a>
       
       
         <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
@@ -863,9 +863,10 @@
         <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@article</span><span class="p">{</span><span class="nl">qi2026flowreversed</span><span class="p">,</span>
   <span class="na">title</span> <span class="p">=</span> <span class="s">{Sample-Efficient Reinforcement Learning for Policy Improvement via Flow-Reversed Action Anchors}</span><span class="p">,</span>
   <span class="na">author</span> <span class="p">=</span> <span class="s">{Qi, Carl and Dong, Weijun and Wang, Xiaojie and Chen, Peiyi and Sajnani, Rahul and Zhang, Mingyuan and Zhang, Amy and Barreiros, Jose and Nambi, Manikantan and Ratliff, Lillian J. and Randle, Dylan}</span><span class="p">,</span>
-  <span class="na">year</span> <span class="p">=</span> <span class="s">{2026}</span><span class="p">,</span>
-  <span class="na">journal</span> <span class="p">=</span> <span class="s">{arXiv preprint arXiv:2610.22852}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2027}</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">{International Conference on Learning Representations (ICLR), 2027 (Under Review)}</span><span class="p">,</span>
   <span class="na">url</span> <span class="p">=</span> <span class="s">{https://arxiv.org/abs/2610.22852}</span><span class="p">,</span>
+  <span class="na">webpage</span> <span class="p">=</span> <span class="s">{https://anchorq-rl.com/}</span><span class="p">,</span>
   <span class="na">note</span> <span class="p">=</span> <span class="s">{&lt;ul class="tldr"&gt;&lt;li&gt;Sample-efficient &lt;b&gt;RL fine-tuning&lt;/b&gt; of generalist robot policies using &lt;b&gt;flow-reversed action anchors&lt;/b&gt;.&lt;/li&gt;&lt;li&gt;A diffusion-policy improvement scheme that sharply reduces costly online interaction.&lt;/li&gt;&lt;/ul&gt;}</span>
 <span class="p">}</span></code></pre></figure>
       </div>
@@ -943,7 +944,7 @@
 <li>
 <b>Training-free</b> geometry-based image editing on a frozen T2I diffusion model.</li>
 <li>User specifies a <b>3D rigid transform</b> (rotate, translate, scale); GeoDiffuser rewrites attention maps to realize it.</li>
-<li>No fine-tuning, no 3D supervision — WACV 2025 <b>Best Student Paper + invited talk</b>.</li>
+<li>No fine-tuning, no 3D supervision — WACV 2025 <b>Best Student Paper</b>.</li>
 </ul>
     </div>
 
@@ -1005,7 +1006,7 @@
   <span class="na">primaryclass</span> <span class="p">=</span> <span class="s">{cs.CV}</span><span class="p">,</span>
   <span class="na">url</span> <span class="p">=</span> <span class="s">{https://arxiv.org/abs/2404.14403}</span><span class="p">,</span>
   <span class="na">webpage</span> <span class="p">=</span> <span class="s">{/projects/geodiffuser/}</span><span class="p">,</span>
-  <span class="na">note</span> <span class="p">=</span> <span class="s">{&lt;ul class="tldr"&gt;&lt;li&gt;&lt;b&gt;Training-free&lt;/b&gt; geometry-based image editing on a frozen T2I diffusion model.&lt;/li&gt;&lt;li&gt;User specifies a &lt;b&gt;3D rigid transform&lt;/b&gt; (rotate, translate, scale); GeoDiffuser rewrites attention maps to realize it.&lt;/li&gt;&lt;li&gt;No fine-tuning, no 3D supervision — WACV 2025 &lt;b&gt;Best Student Paper + invited talk&lt;/b&gt;.&lt;/li&gt;&lt;/ul&gt;}</span>
+  <span class="na">note</span> <span class="p">=</span> <span class="s">{&lt;ul class="tldr"&gt;&lt;li&gt;&lt;b&gt;Training-free&lt;/b&gt; geometry-based image editing on a frozen T2I diffusion model.&lt;/li&gt;&lt;li&gt;User specifies a &lt;b&gt;3D rigid transform&lt;/b&gt; (rotate, translate, scale); GeoDiffuser rewrites attention maps to realize it.&lt;/li&gt;&lt;li&gt;No fine-tuning, no 3D supervision — WACV 2025 &lt;b&gt;Best Student Paper&lt;/b&gt;.&lt;/li&gt;&lt;/ul&gt;}</span>
 <span class="p">}</span></code></pre></figure>
       </div>
     
@@ -1894,7 +1895,7 @@
 
 <!-- Load Common JS -->
 <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script>
-<script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script>
+<script defer src="/assets/js/common.js?3b2c029f7edfe33e0d766b3d5965e124"></script>
 <script defer src="/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script>
 
 <!-- Jupyter Open External Links New Tab -->

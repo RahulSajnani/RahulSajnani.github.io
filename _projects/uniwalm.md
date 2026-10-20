@@ -102,21 +102,25 @@ giscus_comments: false
   <div class="subtitle"><em>Under review</em> &middot; IEEE ICRA 2027</div>
 
   <div class="author-list">
-    <a href="https://scholar.google.com/citations?user=HAtfBjoAAAAJ&hl=en">Rahul Sajnani</a><sup>1,2</sup> &middot;
+    <a href="https://scholar.google.com/citations?hl=en&user=HAtfBjoAAAAJ&view_op=list_works&sortby=pubdate">Rahul Sajnani</a><sup>1,2</sup> &middot;
     Diego Romeres<sup>2</sup> &middot;
-    Mingyuan Zhang<sup>2</sup> &middot;
+    Mingyuan Zhang<sup>2,3</sup> &middot;
     Kai Gao<sup>2</sup> &middot;
-    Carl Qi<sup>2</sup> &middot;
+    Carl Qi<sup>2,4</sup> &middot;
     Baichuan Huang<sup>2</sup> &middot;
     <a href="https://cs.brown.edu/people/ssrinath/">Srinath Sridhar</a><sup>1</sup> &middot;
     Dylan Randle<sup>2</sup> &middot;
-    Lillian J. Ratliff<sup>2</sup> &middot;
+    Lillian J. Ratliff<sup>2,5</sup> &middot;
     Jose Barreiros<sup>2</sup> &middot;
     Manikantan Nambi<sup>2</sup> &middot;
     <a href="https://scholar.google.com/citations?user=u8FiVv8AAAAJ&hl=en">Jeroen Vanbaar</a><sup>2</sup>
   </div>
   <div class="affiliation-list">
-    <sup>1</sup> Brown University &nbsp;&nbsp; <sup>2</sup> Amazon Robotics
+    <sup>1</sup> Brown University &nbsp;&middot;&nbsp;
+    <sup>2</sup> Amazon &nbsp;&middot;&nbsp;
+    <sup>3</sup> Northeastern University &nbsp;&middot;&nbsp;
+    <sup>4</sup> UT Austin &nbsp;&middot;&nbsp;
+    <sup>5</sup> University of Washington
   </div>
 
   <div class="project-links">
@@ -148,6 +152,19 @@ giscus_comments: false
 <div class="fig-caption">
   <strong>(a) UniWALM.</strong> A single <strong>mixture-of-transformers</strong> backbone co-denoises video, action, and language. Four tasks: <strong>(b)</strong> single-arm manipulation, <strong>(c)</strong> dexterous bimanual, <strong>(d)</strong> dexterous bimanual sequential, <strong>(e)</strong> reasoning-dependent manipulation. <strong>(f)</strong> other hybrid architectures bolt a VLM onto a video model; <strong>(g)</strong> UniWALM instead shares one representation across all three modalities.
 </div>
+
+<!-- -------------------- OVERVIEW VIDEO -------------------- -->
+<div class="row mt-4">
+  <div class="col-sm-12">
+    <div class="white-panel" style="padding:0; overflow:hidden;">
+      <video class="autoplay-on-view" muted autoplay loop playsinline preload="metadata" controls poster="/assets/video/projects/uniwalm/posters/uniwalm_overview.jpg" style="width:100%; height:auto; display:block; border-radius:8px;">
+        <source src="/assets/video/projects/uniwalm/uniwalm_overview.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</div>
+<div class="fig-caption">Overview video: UniWALM in action across real and simulated manipulation tasks.</div>
 
 <!-- -------------------- OVERVIEW -------------------- -->
 <h2 id="overview" class="section-title">Overview</h2>
@@ -254,6 +271,42 @@ We evaluate UniWALM across real-world and simulated manipulation tasks: single-a
   <strong>RMBench M(n) qualitative rollouts.</strong> Each row is a successful UniWALM rollout on one M(n) task — <em>Press Button</em>, <em>Battery Try</em>, <em>Blocks Ranking Try</em>, <em>Cover Blocks</em>. Below each panel we show the predicted <span style="color:#b22222">next subtask</span> and the generated <span style="color:#1f6d8f">textual memory</span> that is re-consumed as the prompt on the next control step. Reading left-to-right shows how the language-memory loop accumulates task-relevant state across steps.
 </div>
 
+<h3 class="subsection-title">RMBench — rollout videos</h3>
+<div class="row g-2">
+  <div class="col-md-6 col-sm-12 mt-2">
+    <div class="white-panel" style="padding:0; overflow:hidden;">
+      <video class="autoplay-on-view speed-2x" muted autoplay loop playsinline preload="metadata" controls poster="/assets/video/projects/uniwalm/posters/press_button.jpg" style="width:100%; height:auto; display:block; border-radius:8px;">
+        <source src="/assets/video/projects/uniwalm/rmbench/press_button.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="fig-caption"><strong>Press Button</strong></div>
+  </div>
+  <div class="col-md-6 col-sm-12 mt-2">
+    <div class="white-panel" style="padding:0; overflow:hidden;">
+      <video class="autoplay-on-view speed-2x" muted autoplay loop playsinline preload="metadata" controls poster="/assets/video/projects/uniwalm/posters/battery_try.jpg" style="width:100%; height:auto; display:block; border-radius:8px;">
+        <source src="/assets/video/projects/uniwalm/rmbench/battery_try.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="fig-caption"><strong>Battery Try</strong></div>
+  </div>
+  <div class="col-md-6 col-sm-12 mt-2">
+    <div class="white-panel" style="padding:0; overflow:hidden;">
+      <video class="autoplay-on-view speed-2x" muted autoplay loop playsinline preload="metadata" controls poster="/assets/video/projects/uniwalm/posters/blocks_ranking_try.jpg" style="width:100%; height:auto; display:block; border-radius:8px;">
+        <source src="/assets/video/projects/uniwalm/rmbench/blocks_ranking_try.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="fig-caption"><strong>Blocks Ranking Try</strong></div>
+  </div>
+  <div class="col-md-6 col-sm-12 mt-2">
+    <div class="white-panel" style="padding:0; overflow:hidden;">
+      <video class="autoplay-on-view speed-2x" muted autoplay loop playsinline preload="metadata" controls poster="/assets/video/projects/uniwalm/posters/cover_blocks.jpg" style="width:100%; height:auto; display:block; border-radius:8px;">
+        <source src="/assets/video/projects/uniwalm/rmbench/cover_blocks.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="fig-caption"><strong>Cover Blocks</strong></div>
+  </div>
+</div>
+
 <!-- -------------------- RESULTS -------------------- -->
 <h2 id="results" class="section-title">Quantitative Results</h2>
 
@@ -293,3 +346,37 @@ Work done during Rahul's internship at <strong>Amazon Robotics</strong>.
 <p>
 Questions? Reach out at <a href="mailto:rahul_sajnani@brown.edu">rahul_sajnani@brown.edu</a>.
 </p>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const vids = document.querySelectorAll("video.autoplay-on-view");
+
+  // Pre-set playback rate for 2x videos (applies even before play).
+  vids.forEach(v => {
+    if (v.classList.contains("speed-2x")) {
+      v.defaultPlaybackRate = 2.0;
+      v.playbackRate = 2.0;
+      v.addEventListener("loadedmetadata", () => { v.playbackRate = 2.0; });
+      v.addEventListener("play",           () => { v.playbackRate = 2.0; });
+    }
+  });
+
+  if (!("IntersectionObserver" in window)) {
+    vids.forEach(v => v.play().catch(() => {}));
+    return;
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      const v = e.target;
+      if (e.isIntersecting && e.intersectionRatio >= 0.5) {
+        v.play().catch(() => {});
+      } else {
+        v.pause();
+      }
+    });
+  }, { threshold: [0, 0.25, 0.5, 0.75, 1.0] });
+
+  vids.forEach(v => io.observe(v));
+});
+</script>

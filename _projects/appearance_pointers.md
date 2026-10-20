@@ -120,7 +120,7 @@ pretty_table: false
   <div class="subtitle">Under review &middot; 2026</div>
 
   <div class="author-list">
-    <a href="https://scholar.google.com/citations?user=HAtfBjoAAAAJ&hl=en">Rahul Sajnani</a><sup>1,2</sup> &middot;
+    <a href="https://scholar.google.com/citations?hl=en&user=HAtfBjoAAAAJ&view_op=list_works&sortby=pubdate">Rahul Sajnani</a><sup>1,2</sup> &middot;
     Yulia Gryaditskaya<sup>2</sup> &middot;
     Radomír Měch<sup>2</sup> &middot;
     <a href="https://cs.brown.edu/people/ssrinath/">Srinath Sridhar</a><sup>1</sup> &middot;

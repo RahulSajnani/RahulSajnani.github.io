@@ -164,27 +164,7 @@
             
           
             
-              
-                
-                <li class="nav-item ">
-                  
-                  <a class="nav-link" href="/assets/pdfs/RahulSajnani_Resume.pdf">Resume
-                    
-                  </a>
-                </li>
-              
-            
           
-            
-              
-                
-                <li class="nav-item ">
-                  
-                  <a class="nav-link" href="/assets/pdfs/RahulSajnani_CV.pdf">CV
-                    
-                  </a>
-                </li>
-              
             
           
             
@@ -325,21 +305,25 @@
 <em>Under review</em> · IEEE ICRA 2027</div>
 
   <div class="author-list">
-    <a href="https://scholar.google.com/citations?user=HAtfBjoAAAAJ&amp;hl=en" rel="external nofollow noopener" target="_blank">Rahul Sajnani</a><sup>1,2</sup> ·
+    <a href="https://scholar.google.com/citations?hl=en&amp;user=HAtfBjoAAAAJ&amp;view_op=list_works&amp;sortby=pubdate" rel="external nofollow noopener" target="_blank">Rahul Sajnani</a><sup>1,2</sup> ·
     Diego Romeres<sup>2</sup> ·
-    Mingyuan Zhang<sup>2</sup> ·
+    Mingyuan Zhang<sup>2,3</sup> ·
     Kai Gao<sup>2</sup> ·
-    Carl Qi<sup>2</sup> ·
+    Carl Qi<sup>2,4</sup> ·
     Baichuan Huang<sup>2</sup> ·
     <a href="https://cs.brown.edu/people/ssrinath/" rel="external nofollow noopener" target="_blank">Srinath Sridhar</a><sup>1</sup> ·
     Dylan Randle<sup>2</sup> ·
-    Lillian J. Ratliff<sup>2</sup> ·
+    Lillian J. Ratliff<sup>2,5</sup> ·
     Jose Barreiros<sup>2</sup> ·
     Manikantan Nambi<sup>2</sup> ·
     <a href="https://scholar.google.com/citations?user=u8FiVv8AAAAJ&amp;hl=en" rel="external nofollow noopener" target="_blank">Jeroen Vanbaar</a><sup>2</sup>
   </div>
   <div class="affiliation-list">
-    <sup>1</sup> Brown University    <sup>2</sup> Amazon Robotics
+    <sup>1</sup> Brown University  · 
+    <sup>2</sup> Amazon  · 
+    <sup>3</sup> Northeastern University  · 
+    <sup>4</sup> UT Austin  · 
+    <sup>5</sup> University of Washington
   </div>
 
   <div class="project-links">
@@ -388,6 +372,19 @@
 <div class="fig-caption">
   <strong>(a) UniWALM.</strong> A single <strong>mixture-of-transformers</strong> backbone co-denoises video, action, and language. Four tasks: <strong>(b)</strong> single-arm manipulation, <strong>(c)</strong> dexterous bimanual, <strong>(d)</strong> dexterous bimanual sequential, <strong>(e)</strong> reasoning-dependent manipulation. <strong>(f)</strong> other hybrid architectures bolt a VLM onto a video model; <strong>(g)</strong> UniWALM instead shares one representation across all three modalities.
 </div>
+
+<!-- -------------------- OVERVIEW VIDEO -------------------- -->
+<div class="row mt-4">
+  <div class="col-sm-12">
+    <div class="white-panel" style="padding:0; overflow:hidden;">
+      <video class="autoplay-on-view" muted="" autoplay="" loop="" playsinline="" preload="metadata" controls="" poster="/assets/video/projects/uniwalm/posters/uniwalm_overview.jpg" style="width:100%; height:auto; display:block; border-radius:8px;">
+        <source src="/assets/video/projects/uniwalm/uniwalm_overview.mp4" type="video/mp4"></source>
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</div>
+<div class="fig-caption">Overview video: UniWALM in action across real and simulated manipulation tasks.</div>
 
 <!-- -------------------- OVERVIEW -------------------- -->
 <h2 id="overview" class="section-title">Overview</h2>
@@ -577,6 +574,42 @@ We evaluate UniWALM across real-world and simulated manipulation tasks: single-a
   <strong>RMBench M(n) qualitative rollouts.</strong> Each row is a successful UniWALM rollout on one M(n) task — <em>Press Button</em>, <em>Battery Try</em>, <em>Blocks Ranking Try</em>, <em>Cover Blocks</em>. Below each panel we show the predicted <span style="color:#b22222">next subtask</span> and the generated <span style="color:#1f6d8f">textual memory</span> that is re-consumed as the prompt on the next control step. Reading left-to-right shows how the language-memory loop accumulates task-relevant state across steps.
 </div>
 
+<h3 class="subsection-title">RMBench — rollout videos</h3>
+<div class="row g-2">
+  <div class="col-md-6 col-sm-12 mt-2">
+    <div class="white-panel" style="padding:0; overflow:hidden;">
+      <video class="autoplay-on-view speed-2x" muted="" autoplay="" loop="" playsinline="" preload="metadata" controls="" poster="/assets/video/projects/uniwalm/posters/press_button.jpg" style="width:100%; height:auto; display:block; border-radius:8px;">
+        <source src="/assets/video/projects/uniwalm/rmbench/press_button.mp4" type="video/mp4"></source>
+      </video>
+    </div>
+    <div class="fig-caption"><strong>Press Button</strong></div>
+  </div>
+  <div class="col-md-6 col-sm-12 mt-2">
+    <div class="white-panel" style="padding:0; overflow:hidden;">
+      <video class="autoplay-on-view speed-2x" muted="" autoplay="" loop="" playsinline="" preload="metadata" controls="" poster="/assets/video/projects/uniwalm/posters/battery_try.jpg" style="width:100%; height:auto; display:block; border-radius:8px;">
+        <source src="/assets/video/projects/uniwalm/rmbench/battery_try.mp4" type="video/mp4"></source>
+      </video>
+    </div>
+    <div class="fig-caption"><strong>Battery Try</strong></div>
+  </div>
+  <div class="col-md-6 col-sm-12 mt-2">
+    <div class="white-panel" style="padding:0; overflow:hidden;">
+      <video class="autoplay-on-view speed-2x" muted="" autoplay="" loop="" playsinline="" preload="metadata" controls="" poster="/assets/video/projects/uniwalm/posters/blocks_ranking_try.jpg" style="width:100%; height:auto; display:block; border-radius:8px;">
+        <source src="/assets/video/projects/uniwalm/rmbench/blocks_ranking_try.mp4" type="video/mp4"></source>
+      </video>
+    </div>
+    <div class="fig-caption"><strong>Blocks Ranking Try</strong></div>
+  </div>
+  <div class="col-md-6 col-sm-12 mt-2">
+    <div class="white-panel" style="padding:0; overflow:hidden;">
+      <video class="autoplay-on-view speed-2x" muted="" autoplay="" loop="" playsinline="" preload="metadata" controls="" poster="/assets/video/projects/uniwalm/posters/cover_blocks.jpg" style="width:100%; height:auto; display:block; border-radius:8px;">
+        <source src="/assets/video/projects/uniwalm/rmbench/cover_blocks.mp4" type="video/mp4"></source>
+      </video>
+    </div>
+    <div class="fig-caption"><strong>Cover Blocks</strong></div>
+  </div>
+</div>
+
 <!-- -------------------- RESULTS -------------------- -->
 <h2 id="results" class="section-title">Quantitative Results</h2>
 
@@ -616,6 +649,41 @@ Work done during Rahul's internship at <strong>Amazon Robotics</strong>.
 <p>
 Questions? Reach out at <a href="mailto:rahul_sajnani@brown.edu">rahul_sajnani@brown.edu</a>.
 </p>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const vids = document.querySelectorAll("video.autoplay-on-view");
+
+  // Pre-set playback rate for 2x videos (applies even before play).
+  vids.forEach(v => {
+    if (v.classList.contains("speed-2x")) {
+      v.defaultPlaybackRate = 2.0;
+      v.playbackRate = 2.0;
+      v.addEventListener("loadedmetadata", () => { v.playbackRate = 2.0; });
+      v.addEventListener("play",           () => { v.playbackRate = 2.0; });
+    }
+  });
+
+  if (!("IntersectionObserver" in window)) {
+    vids.forEach(v => v.play().catch(() => {}));
+    return;
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      const v = e.target;
+      if (e.isIntersecting && e.intersectionRatio >= 0.5) {
+        v.play().catch(() => {});
+      } else {
+        v.pause();
+      }
+    });
+  }, { threshold: [0, 0.25, 0.5, 0.75, 1.0] });
+
+  vids.forEach(v => io.observe(v));
+});
+</script>
+
 
   </article>
 
@@ -689,7 +757,7 @@ Questions? Reach out at <a href="mailto:rahul_sajnani@brown.edu">rahul_sajnani@b
 
 <!-- Load Common JS -->
 <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script>
-<script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script>
+<script defer src="/assets/js/common.js?3b2c029f7edfe33e0d766b3d5965e124"></script>
 <script defer src="/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script>
 
 <!-- Jupyter Open External Links New Tab -->

@@ -68,7 +68,7 @@ giscus_comments: false
   <div class="subtitle">IEEE/CVF WACV 2025 &middot; <strong>Best Student Paper</strong></div>
 
   <div class="author-list">
-    <a href="https://scholar.google.com/citations?user=HAtfBjoAAAAJ&hl=en">Rahul Sajnani</a><sup>1,2</sup> &middot;
+    <a href="https://scholar.google.com/citations?hl=en&user=HAtfBjoAAAAJ&view_op=list_works&sortby=pubdate">Rahul Sajnani</a><sup>1,2</sup> &middot;
     <a href="https://scholar.google.com/citations?user=u8FiVv8AAAAJ&hl=en">Jeroen Vanbaar</a><sup>2</sup> &middot;
     Jie Min<sup>2</sup> &middot;
     <a href="https://kdk132.github.io/">Kapil Katyal</a><sup>2</sup> &middot;

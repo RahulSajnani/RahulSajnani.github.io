@@ -117,11 +117,11 @@
 @article{sajnani2026uniwalm,
       title={UniWALM: A Unified World-Action-Language Model for Embodied Robot Control},
       author={Sajnani, Rahul and Romeres, Diego and Zhang, Mingyuan and Gao, Kai and Qi, Carl and Huang, Baichuan and Sridhar, Srinath and Randle, Dylan and Ratliff, Lillian J. and Barreiros, Jose and Nambi, Manikantan and Vanbaar, Jeroen},
-      year={2026},
-      journal={IEEE International Conference on Robotics and Automation (ICRA), 2027 (Under Review)},
+      year={2027},
+      journal={IEEE International Conference on Robotics and Automation (ICRA) (Under Review)},
       selected={true},
       bibtex_show={true},
-      preview={uniwalm.gif},
+      preview={uniwalm.png},
       webpage={/projects/uniwalm/},
       note={<ul class="tldr"><li>Mixture-of-Transformers (Wan2.2 video + action DiT + <b>discrete-diffusion language expert</b>) co-generates video, action, and language in <b>one parallel diffusion pass</b>.</li><li>Policy re-reads its own generated language as <b>memory</b> on every control step — no external VLM / planner.</li><li>Real-world memory-dependent manipulation: <b>11.1% → 61.1%</b> vs same-backbone FastWAM.</li><li><b>34.5%</b> on RMBench, above Mem-0's privileged-keyframe setup (28.5%).</li></ul>},
       abstract={A mixture-of-transformers (Wan2.2 video backbone + action DiT + discrete-diffusion language expert) co-generates future video, robot action, and a short natural-language memory in a single parallel diffusion pass; the policy re-reads the memory on every control step. 11.1% to 61.1% on real-world memory-dependent manipulation vs same-backbone FastWAM; 34.5% on RMBench, beating Mem-0's privileged-keyframe setup (28.5%).}
@@ -143,13 +143,14 @@
 @article{qi2026flowreversed,
       title={Sample-Efficient Reinforcement Learning for Policy Improvement via Flow-Reversed Action Anchors},
       author={Qi, Carl and Dong, Weijun and Wang, Xiaojie and Chen, Peiyi and Sajnani, Rahul and Zhang, Mingyuan and Zhang, Amy and Barreiros, Jose and Nambi, Manikantan and Ratliff, Lillian J. and Randle, Dylan},
-      year={2026},
-      journal={arXiv preprint arXiv:2610.22852},
+      year={2027},
+      journal={International Conference on Learning Representations (ICLR), 2027 (Under Review)},
       selected={true},
       bibtex_show={true},
-      preview={flowreversed.gif},
+      preview={anchorq.gif},
       arxiv={2610.22852},
       url={https://arxiv.org/abs/2610.22852},
+      webpage={https://anchorq-rl.com/},
       note={<ul class="tldr"><li>Sample-efficient <b>RL fine-tuning</b> of generalist robot policies using <b>flow-reversed action anchors</b>.</li><li>A diffusion-policy improvement scheme that sharply reduces costly online interaction.</li></ul>},
       abstract={Sample-efficient RL fine-tuning of generalist robot policies using flow-reversed action anchors; a diffusion-policy improvement scheme that reduces costly online interaction.}
 }
@@ -170,7 +171,7 @@
       webpage={/projects/geodiffuser/},
       code={https://github.com/RahulSajnani/GeoDiffuser},
       additional_info={ (**Best Student Paper**)},
-      note={<ul class="tldr"><li><b>Training-free</b> geometry-based image editing on a frozen T2I diffusion model.</li><li>User specifies a <b>3D rigid transform</b> (rotate, translate, scale); GeoDiffuser rewrites attention maps to realize it.</li><li>No fine-tuning, no 3D supervision — WACV 2025 <b>Best Student Paper + invited talk</b>.</li></ul>}
+      note={<ul class="tldr"><li><b>Training-free</b> geometry-based image editing on a frozen T2I diffusion model.</li><li>User specifies a <b>3D rigid transform</b> (rotate, translate, scale); GeoDiffuser rewrites attention maps to realize it.</li><li>No fine-tuning, no 3D supervision — WACV 2025 <b>Best Student Paper</b>.</li></ul>}
 }
 
 @InProceedings{genhsi2026,

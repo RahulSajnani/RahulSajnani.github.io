@@ -2,7 +2,7 @@
 layout: page
 permalink: /assets/pdfs/RahulSajnani_CV.pdf
 title: CV
-nav: true
+nav: false
 nav_order: 5
 # cv_pdf: 
 # description: 
