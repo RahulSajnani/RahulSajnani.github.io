@@ -131,7 +131,7 @@ pretty_table: false
   </div>
 
   <div class="project-links">
-    <a href="#"><i class="ai ai-arxiv"></i>&nbsp;arXiv</a>
+    <a href="https://arxiv.org/abs/2607.19344"><i class="ai ai-arxiv"></i>&nbsp;arXiv</a>
     <a href="https://ivl.cs.brown.edu/research/appearance_pointers.html"><i class="fa-solid fa-globe"></i>&nbsp;Brown IVL Page</a>
     <a href="#citation"><i class="fa-solid fa-quote-left"></i>&nbsp;BibTeX</a>
   </div>
