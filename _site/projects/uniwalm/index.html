@@ -24,7 +24,7 @@
 <meta name="author" content="Rahul Sajnani">
 <meta name="description" content="A Unified World-Action-Language Model for Embodied Robot Control · &lt;em&gt;Under review, ICRA 2027&lt;/em&gt;">
 
-  <meta name="keywords" content="Computer Vision, Robotics, Generative AI, Diffusion Editing">
+  <meta name="keywords" content="Robotics Foundation Models, World Models, Autonomous Driving, Self-Driving, Generative Modeling, Diffusion Models, Robot Learning, 3D Computer Vision, Brain-Robot Interfaces, VLA, Rahul Sajnani">
 
 
 
@@ -254,7 +254,8 @@
   h2.section-title { font-size: 1.35rem; font-weight: 600; margin: 2.4rem 0 0.9rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--global-divider-color); }
   h3.subsection-title { font-size: 1.08rem; font-weight: 600; margin: 1.5rem 0 0.6rem; }
 
-  .fig-caption { font-size: 0.85rem; color: var(--global-text-color-light); text-align: center; margin: 0.4rem auto 0.3rem; max-width: 820px; }
+  .fig-caption { font-size: 0.85rem; color: var(--global-text-color); text-align: center; margin: 0.4rem auto 0.3rem; max-width: 820px; }
+  html[data-theme="dark"] .fig-caption { color: rgba(255,255,255,0.92); }
 
   .bibtex-block { background: var(--global-code-bg-color); border-radius: 6px; padding: 0.9rem 1rem; font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size: 0.82rem; line-height: 1.55; overflow-x: auto; white-space: pre; }
 
@@ -327,8 +328,8 @@
   </div>
 
   <div class="project-links">
-    <a href="#"><i class="ai ai-arxiv"></i> arXiv (coming soon)</a>
-    <a href="#"><i class="fa-regular fa-file-pdf"></i> Paper</a>
+    <a href="https://arxiv.org/abs/2610.28626" rel="external nofollow noopener" target="_blank"><i class="ai ai-arxiv"></i> arXiv</a>
+    <a href="https://github.com/RahulSajnani/UniWALM" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
     <a href="#citation"><i class="fa-solid fa-quote-left"></i> BibTeX</a>
   </div>
 
@@ -574,42 +575,6 @@ We evaluate UniWALM across real-world and simulated manipulation tasks: single-a
   <strong>RMBench M(n) qualitative rollouts.</strong> Each row is a successful UniWALM rollout on one M(n) task — <em>Press Button</em>, <em>Battery Try</em>, <em>Blocks Ranking Try</em>, <em>Cover Blocks</em>. Below each panel we show the predicted <span style="color:#b22222">next subtask</span> and the generated <span style="color:#1f6d8f">textual memory</span> that is re-consumed as the prompt on the next control step. Reading left-to-right shows how the language-memory loop accumulates task-relevant state across steps.
 </div>
 
-<h3 class="subsection-title">RMBench — rollout videos</h3>
-<div class="row g-2">
-  <div class="col-md-6 col-sm-12 mt-2">
-    <div class="white-panel" style="padding:0; overflow:hidden;">
-      <video class="autoplay-on-view speed-2x" muted="" autoplay="" loop="" playsinline="" preload="metadata" controls="" poster="/assets/video/projects/uniwalm/posters/press_button.jpg" style="width:100%; height:auto; display:block; border-radius:8px;">
-        <source src="/assets/video/projects/uniwalm/rmbench/press_button.mp4" type="video/mp4"></source>
-      </video>
-    </div>
-    <div class="fig-caption"><strong>Press Button</strong></div>
-  </div>
-  <div class="col-md-6 col-sm-12 mt-2">
-    <div class="white-panel" style="padding:0; overflow:hidden;">
-      <video class="autoplay-on-view speed-2x" muted="" autoplay="" loop="" playsinline="" preload="metadata" controls="" poster="/assets/video/projects/uniwalm/posters/battery_try.jpg" style="width:100%; height:auto; display:block; border-radius:8px;">
-        <source src="/assets/video/projects/uniwalm/rmbench/battery_try.mp4" type="video/mp4"></source>
-      </video>
-    </div>
-    <div class="fig-caption"><strong>Battery Try</strong></div>
-  </div>
-  <div class="col-md-6 col-sm-12 mt-2">
-    <div class="white-panel" style="padding:0; overflow:hidden;">
-      <video class="autoplay-on-view speed-2x" muted="" autoplay="" loop="" playsinline="" preload="metadata" controls="" poster="/assets/video/projects/uniwalm/posters/blocks_ranking_try.jpg" style="width:100%; height:auto; display:block; border-radius:8px;">
-        <source src="/assets/video/projects/uniwalm/rmbench/blocks_ranking_try.mp4" type="video/mp4"></source>
-      </video>
-    </div>
-    <div class="fig-caption"><strong>Blocks Ranking Try</strong></div>
-  </div>
-  <div class="col-md-6 col-sm-12 mt-2">
-    <div class="white-panel" style="padding:0; overflow:hidden;">
-      <video class="autoplay-on-view speed-2x" muted="" autoplay="" loop="" playsinline="" preload="metadata" controls="" poster="/assets/video/projects/uniwalm/posters/cover_blocks.jpg" style="width:100%; height:auto; display:block; border-radius:8px;">
-        <source src="/assets/video/projects/uniwalm/rmbench/cover_blocks.mp4" type="video/mp4"></source>
-      </video>
-    </div>
-    <div class="fig-caption"><strong>Cover Blocks</strong></div>
-  </div>
-</div>
-
 <!-- -------------------- RESULTS -------------------- -->
 <h2 id="results" class="section-title">Quantitative Results</h2>
 
@@ -628,18 +593,56 @@ Without any pretrained language or reasoning model, UniWALM reaches <strong>34.5
 On a real-world Find-the-Item task designed to require memory, generating textual memory lifts success from <strong>11.1%</strong> (FastWAM, which shares our video backbone but has no language generation) to <strong>61.1%</strong>. State-of-the-art VLAs stay at or below chance (≤ 33.3%).
 </p>
 
+<div class="row g-2">
+  <div class="col-md-3 col-sm-6 mt-2">
+    <div class="white-panel" style="padding:0; overflow:hidden;">
+      <video class="autoplay-on-view speed-2x" muted="" autoplay="" loop="" playsinline="" preload="metadata" controls="" poster="/assets/video/projects/uniwalm/posters/press_button.jpg" style="width:100%; height:auto; display:block; border-radius:8px;">
+        <source src="/assets/video/projects/uniwalm/rmbench/press_button.mp4" type="video/mp4"></source>
+      </video>
+    </div>
+    <div class="fig-caption"><strong>Press Button</strong></div>
+  </div>
+  <div class="col-md-3 col-sm-6 mt-2">
+    <div class="white-panel" style="padding:0; overflow:hidden;">
+      <video class="autoplay-on-view speed-2x" muted="" autoplay="" loop="" playsinline="" preload="metadata" controls="" poster="/assets/video/projects/uniwalm/posters/battery_try.jpg" style="width:100%; height:auto; display:block; border-radius:8px;">
+        <source src="/assets/video/projects/uniwalm/rmbench/battery_try.mp4" type="video/mp4"></source>
+      </video>
+    </div>
+    <div class="fig-caption"><strong>Battery Try</strong></div>
+  </div>
+  <div class="col-md-3 col-sm-6 mt-2">
+    <div class="white-panel" style="padding:0; overflow:hidden;">
+      <video class="autoplay-on-view speed-2x" muted="" autoplay="" loop="" playsinline="" preload="metadata" controls="" poster="/assets/video/projects/uniwalm/posters/blocks_ranking_try.jpg" style="width:100%; height:auto; display:block; border-radius:8px;">
+        <source src="/assets/video/projects/uniwalm/rmbench/blocks_ranking_try.mp4" type="video/mp4"></source>
+      </video>
+    </div>
+    <div class="fig-caption"><strong>Blocks Ranking Try</strong></div>
+  </div>
+  <div class="col-md-3 col-sm-6 mt-2">
+    <div class="white-panel" style="padding:0; overflow:hidden;">
+      <video class="autoplay-on-view speed-2x" muted="" autoplay="" loop="" playsinline="" preload="metadata" controls="" poster="/assets/video/projects/uniwalm/posters/cover_blocks.jpg" style="width:100%; height:auto; display:block; border-radius:8px;">
+        <source src="/assets/video/projects/uniwalm/rmbench/cover_blocks.mp4" type="video/mp4"></source>
+      </video>
+    </div>
+    <div class="fig-caption"><strong>Cover Blocks</strong></div>
+  </div>
+</div>
+
 <p>
 Together, these results answer our question affirmatively: a single model generating language, video, and action can improve control, and <strong>memory-dependent behavior emerges as a natural consequence</strong> of the unified formulation.
 </p>
 
 <!-- -------------------- CITATION -------------------- -->
 <h2 id="citation" class="section-title">Citation</h2>
-<div class="bibtex-block">@article{sajnani2026uniwalm,
-  title={UniWALM: A Unified World-Action-Language Model for Embodied Robot Control},
-  author={Rahul Sajnani and Diego Romeres and Mingyuan Zhang and Kai Gao and Carl Qi and Baichuan Huang and Srinath Sridhar and Dylan Randle and Lillian J. Ratliff and Jose Barreiros and Manikantan Nambi and Jeroen Vanbaar},
-  year={2026},
-  journal={Under review (IEEE ICRA 2027)}
-}</div>
+<pre class="bibtex-block">@misc{sajnani2026uniwalmunifiedworldaction,
+      title={UniWALM: Unified World Action Language Model for Embodied Robot Control},
+      author={Rahul Sajnani and Diego Romeres and Mingyuan Zhang and Kai Gao and Carl Qi and Baichuan Huang and Srinath Sridhar and Dylan Randle and Lillian J. Ratliff and Jose Barreiros and Manikantan Nambi and Jeroen Vanbaar},
+      year={2026},
+      eprint={2610.28626},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2610.28626},
+}</pre>
 
 <!-- -------------------- CONTACT -------------------- -->
 <h2 id="contact" class="section-title">Acknowledgements &amp; Contact</h2>
@@ -705,7 +708,7 @@ document.addEventListener("DOMContentLoaded", function () {
       Sajnani. 
       
       
-        Last updated: October 19, 2026.
+        Last updated: October 23, 2026.
       
     </div>
   </footer>
