@@ -248,6 +248,29 @@ On a 2D toy benchmark of robot end-effector trajectories (circle, star, spiral, 
 We evaluate UniWALM across real-world and simulated manipulation tasks: single-arm, dexterous bimanual, dexterous bimanual sequential, and reasoning-dependent (Find-the-Item).
 </p>
 
+<h3 class="subsection-title">Real-world capability highlights</h3>
+<p class="fig-caption" style="margin-bottom:0.5rem;">
+  <em>Note:</em> real-robot rollouts shown here are from an <strong>unoptimized</strong> deployment pipeline (I/O, teleop stack, logging overhead) and run <strong>without a real-time controller (RTC)</strong>, which is why the motion appears jerky. The actual UniWALM <strong>policy + language-memory reasoning runs at ~140&nbsp;ms per step</strong> (N&nbsp;=&nbsp;10 flow-matching steps on an H100), so wall-clock throughput is substantially faster than what the video playback suggests &mdash; smoothness would come for free with an RTC layer on top.
+</p>
+<div class="row g-2 mt-2">
+  <div class="col-md-6 col-sm-12 mt-2">
+    <div class="white-panel" style="padding:0; overflow:hidden;">
+      <video muted autoplay loop playsinline preload="metadata" controls style="width:100%; height:auto; display:block; border-radius:8px;">
+        <source src="/assets/video/projects/uniwalm/collages/memory_grid_3x.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="fig-caption"><strong>Memory-dependent Find-the-Item</strong> &mdash; real-robot rollouts, 3&times; speed. The language-memory loop lets the policy recover the task even when the target object was shown only once at the start.</div>
+  </div>
+  <div class="col-md-6 col-sm-12 mt-2">
+    <div class="white-panel" style="padding:0; overflow:hidden;">
+      <video muted autoplay loop playsinline preload="metadata" controls style="width:100%; height:auto; display:block; border-radius:8px;">
+        <source src="/assets/video/projects/uniwalm/collages/item_removal_grid_3x.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="fig-caption"><strong>Multi-stage item removal</strong> &mdash; dexterous bimanual rollouts, 3&times; speed. Sequential removal of 5 items from a container across varied object layouts.</div>
+  </div>
+</div>
+
 <h3 class="subsection-title">Rollouts across tasks</h3>
 <div class="row mt-3">
   <div class="col-sm-12">
@@ -260,7 +283,21 @@ We evaluate UniWALM across real-world and simulated manipulation tasks: single-a
   Qualitative rollouts across the four task families: <strong>(a) MolmoBot Pick&amp;Place</strong>, <strong>(b) Find-the-Item (memory)</strong>, <strong>(c) Simple dexterous</strong>, and <strong>(d) Complex dexterous</strong>. Red captions are generated <em>subtask / memory</em> tokens the policy produces at each step and re-reads on the next.
 </div>
 
-<h3 class="subsection-title">RMBench — per-task rollouts</h3>
+<h3 class="subsection-title">RMBench — success rollouts across all four M(n) tasks</h3>
+<div class="row mt-2">
+  <div class="col-sm-12">
+    <div class="white-panel" style="padding:0; overflow:hidden; border-radius:8px;">
+      <video muted autoplay loop playsinline preload="metadata" controls style="width:100%; height:auto; display:block;">
+        <source src="/assets/video/projects/uniwalm/collages/rmbench_success_grid_6x.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="fig-caption">
+      <strong>RMBench success grid</strong> &mdash; 12 successful real-robot rollouts sampled across <em>Press Button</em>, <em>Battery Try</em>, <em>Blocks Ranking Try</em>, and <em>Cover Blocks</em>, randomly ordered in a 4&times;3 grid. 6&times; speed.
+    </div>
+  </div>
+</div>
+
+<h3 class="subsection-title">RMBench — per-task qualitative rollouts</h3>
 <div class="row mt-3">
   <div class="col-sm-12">
     <div class="white-panel">

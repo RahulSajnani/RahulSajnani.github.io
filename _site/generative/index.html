@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head -->
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <!-- Metadata, OpenGraph and Schema.org -->
+
+
+
+
+<!-- Standard metadata -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>
+  
+  
+    
+      Generative Demos | Rahul Sajnani
+    
+  
+</title>
+<meta name="author" content="Rahul Sajnani">
+<meta name="description" content="Controllable generative models — GeoDiffuser (WACV 2025 Best Student Paper), GenHSI (WACV 2026), AppearancePointers (under review).">
+
+  <meta name="keywords" content="Robotics Foundation Models, World Models, Autonomous Driving, Self-Driving, Generative Modeling, Diffusion Models, Robot Learning, 3D Computer Vision, Brain-Robot Interfaces, VLA, Rahul Sajnani">
+
+
+
+
+
+
+
+
+
+
+<!-- Bootstrap & MDB -->
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+
+<!-- Bootstrap Table -->
+
+
+<!-- Fonts & Icons -->
+<link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5">
+<link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap">
+
+<!-- Code Syntax Highlighting -->
+<link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light">
+
+
+
+<!-- Styles -->
+
+<!-- pseudocode -->
+
+
+
+<link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e">
+<link rel="canonical" href="http://localhost:4000/generative/">
+
+<!-- Dark Mode -->
+<script src="/assets/js/theme.js?9a0c749ec5240d9cda97bc72359a72c0"></script>
+
+  <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark">
+  <script>
+    initTheme();
+  </script>
+
+
+<!-- GeoJSON support via Leaflet -->
+
+
+<!-- diff2html -->
+
+
+
+
+
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav ">
+    <!-- Header -->
+    <header>
+  <!-- Nav Bar -->
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
+    <div class="container">
+      
+        <a class="navbar-brand title font-weight-lighter" href="/">
+          
+            
+              <span class="font-weight-bold">Rahul</span>
+            
+            
+            Sajnani
+          
+        </a>
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          
+
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">About
+              
+            </a>
+          </li>
+
+          <!-- Other pages -->
+          
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  
+                  <a class="nav-link" href="/publications/">Publications
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  
+                  <a class="nav-link" href="/news/">News
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              
+                
+                <li class="nav-item ">
+                  
+                  <a class="nav-link" href="/demos/">Robot Demos
+                    
+                  </a>
+                </li>
+              
+            
+          
+            
+              
+                
+                <li class="nav-item active">
+                  
+                  <a class="nav-link" href="/generative/">Generative Demos
+                    
+                      <span class="sr-only">(current)</span>
+                    
+                  </a>
+                </li>
+              
+            
+          
+          
+          
+          
+            <!-- Toogle theme mode -->
+            <li class="toggle-container">
+              <button id="light-toggle" title="Change theme">
+                <i class="ti ti-sun-moon" id="light-toggle-system"></i>
+                <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
+                <i class="ti ti-sun-filled" id="light-toggle-light"></i>
+              </button>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+    <!-- Scrolling Progress Bar -->
+    <progress id="progress" value="0">
+      <div class="progress-container">
+        <span class="progress-bar"></span>
+      </div>
+    </progress>
+  
+</header>
+
+
+    <!-- Content -->
+    <div class="container mt-5" role="main">
+      
+        
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">Generative Demos</h1>
+    <p class="post-description">Controllable generative models — GeoDiffuser (WACV 2025 Best Student Paper), GenHSI (WACV 2026), AppearancePointers (under review).</p>
+  </header>
+
+  <article>
+    <style>
+  .gen-wrap { max-width: 1040px; margin: 0 auto; }
+  .gen-wrap p.lead { font-size: 1rem; color: var(--global-text-color-light); margin-bottom: 1rem; }
+
+  .g-section-title {
+    font-size: 1.35rem; font-weight: 600;
+    margin: 2.6rem 0 0.3rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+  .g-section-sub { font-size: 0.9rem; color: var(--global-text-color-light); margin: 0 0 1rem; }
+
+  .g-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: rgba(0,0,0,0.07);
+    color: var(--global-text-color-light);
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-right: 0.4rem;
+    vertical-align: middle;
+  }
+  html[data-theme="dark"] .g-tag { background: rgba(255,255,255,0.08); }
+  .g-tag.highlight {
+    background: rgba(123,30,41,0.1);
+    color: #7B1E29;
+    font-weight: 600;
+  }
+
+  .g-fig { background: var(--global-code-bg-color); padding: 10px; border-radius: 8px; border: 1px solid var(--global-divider-color); overflow: hidden; }
+  .g-fig img { width: 100%; height: auto; display: block; border-radius: 4px; }
+
+  .g-caption { font-size: 0.86rem; color: var(--global-text-color-light); text-align: center; margin: 0.5rem auto 0; max-width: 820px; line-height: 1.4; }
+
+  .g-gallery { display: grid; gap: 10px; margin-top: 0.6rem; }
+  @media (min-width: 520px) { .g-gal-3 { grid-template-columns: repeat(3, 1fr); } .g-gal-4 { grid-template-columns: repeat(4, 1fr); } }
+  .g-gallery .g-cell { background: #fff; border-radius: 6px; border: 1px solid var(--global-divider-color); overflow: hidden; }
+  html[data-theme="dark"] .g-gallery .g-cell { background: #1e1e1e; }
+  .g-gallery img { width: 100%; height: auto; display: block; }
+
+  .g-links { margin: 0.4rem 0 0.2rem; font-size: 0.9rem; }
+  .g-links a {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    padding: 4px 10px; border-radius: 6px;
+    background: #fff; border: 1px solid var(--global-divider-color);
+    color: #1a1a1a; text-decoration: none; font-weight: 500;
+    font-size: 0.82rem; margin-right: 0.3rem;
+  }
+  .g-links a:hover { background: var(--global-theme-color); color: #fff; border-color: var(--global-theme-color); }
+  html[data-theme="dark"] .g-links a { background: #fff; color: #1a1a1a; }
+
+  .g-cta { text-align: center; margin: 2.4rem 0 0; font-size: 0.95rem; }
+  .g-cta a { color: var(--global-theme-color); text-decoration: none; margin: 0 0.6rem; }
+  .g-cta a:hover { text-decoration: underline; }
+</style>
+
+<div class="gen-wrap">
+
+  <p class="lead">Across these three projects I build <strong>legible, designed structures inside the forward pass of pretrained diffusion models</strong> — so a user can control <em>where</em> content goes, <em>what</em> it looks like, and <em>how</em> it moves, without retraining the base model. For full write-ups: <a href="/projects/geodiffuser/">GeoDiffuser</a>, <a href="/projects/appearance_pointers/">AppearancePointers</a>, <a href="https://kunkun0w0.github.io/project/GenHSI/" rel="external nofollow noopener" target="_blank">GenHSI</a>.</p>
+
+  <!-- =================== GEODIFFUSER =================== -->
+  <h2 class="g-section-title">
+<span class="g-tag highlight">WACV 2025 · Best Student Paper</span>GeoDiffuser</h2>
+  <p class="g-section-sub">Geometry-based image editing on a frozen text-to-image diffusion model — <strong>training-free</strong>, invited talk at WACV 2025. User specifies a 3D rigid transformation (translate, rotate, scale) on an object; GeoDiffuser realizes it by rewriting the model's attention maps at inference time, preserving physically-consistent shadows and reflections.</p>
+
+  <div class="g-links">
+  <a href="/projects/geodiffuser/">Project page</a>
+  <a href="https://ivl.cs.brown.edu/research/geodiffuser.html" rel="external nofollow noopener" target="_blank">IVL mirror</a>
+  <a href="https://github.com/RahulSajnani/GeoDiffuser" rel="external nofollow noopener" target="_blank">Code</a>
+</div>
+
+  <div class="g-fig mt-2">
+  
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/projects/geodiffuser/Teaser_updated.001.jpeg" class="img-fluid" width="100%" height="auto" alt="GeoDiffuser teaser" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </picture>
+
+  
+</figure>
+
+</div>
+  <div class="g-caption">User-specified 3D edits (translation, rotation, scale) applied to objects inside pretrained diffusion models — without fine-tuning.</div>
+
+  <h3 style="font-size:1rem; font-weight:600; margin:1.6rem 0 0.4rem;">Edit gallery — movement</h3>
+  <div class="g-gallery g-gal-4">
+  <div class="g-cell"><img src="/assets/img/projects/geodiffuser/movement/1.gif" alt="Movement edit 1"></div>
+  <div class="g-cell"><img src="/assets/img/projects/geodiffuser/movement/10.gif" alt="Movement edit 2"></div>
+  <div class="g-cell"><img src="/assets/img/projects/geodiffuser/movement/16.gif" alt="Movement edit 3"></div>
+  <div class="g-cell"><img src="/assets/img/projects/geodiffuser/movement/19.gif" alt="Movement edit 4"></div>
+</div>
+  <div class="g-caption">Object translation / rotation edits applied to real images at inference. Each GIF shows the edit evolving across diffusion timesteps.</div>
+
+  <h3 style="font-size:1rem; font-weight:600; margin:1.6rem 0 0.4rem;">Edit gallery — object removal</h3>
+  <div class="g-gallery g-gal-4">
+  <div class="g-cell"><img src="/assets/img/projects/geodiffuser/removal/1.gif" alt="Removal 1"></div>
+  <div class="g-cell"><img src="/assets/img/projects/geodiffuser/removal/3.gif" alt="Removal 2"></div>
+  <div class="g-cell"><img src="/assets/img/projects/geodiffuser/removal/5.gif" alt="Removal 3"></div>
+  <div class="g-cell"><img src="/assets/img/projects/geodiffuser/removal/8.gif" alt="Removal 4"></div>
+</div>
+  <div class="g-caption">Clean object removal — attention-map rewriting fills in geometrically consistent background without inpainting.</div>
+
+  <p class="g-caption" style="text-align:left; max-width:none; margin-top:1rem;">
+  <strong>Headline results:</strong> MD <strong>7.3</strong> vs 10.8 on 3D edits (vs fine-tuned Diffusion Handles); <strong>5.6</strong> vs 20.0 on 2D edits (vs Zero123-XL + LaMa).
+</p>
+
+  <!-- =================== GENHSI =================== -->
+  <h2 class="g-section-title">
+<span class="g-tag">WACV 2026</span><span class="g-tag highlight">Training-free</span>GenHSI</h2>
+  <p class="g-section-sub"><strong>Training-free</strong> controllable generation of long human–scene interaction (HSI) videos. The user supplies three things — an image of a <strong>scene</strong>, an image of a <strong>character / avatar</strong>, and a <strong>text prompt</strong> describing a chain of interactions — and GenHSI synthesizes a long, 3D-aware video of the character performing those interactions inside the scene, with identity preservation and physically plausible affordances. No fine-tuning of the base video-diffusion model.</p>
+
+  <p class="g-section-sub">Three-stage pipeline inspired by movie animation:
+  <strong>(1) Script writing</strong> — a VLM parses the high-level text prompt into atomic actions grounded in the scene's affordances;
+  <strong>(2) Pre-visualization</strong> — a pretrained 2D inpainting diffusion model is used to generate plausible 2D human poses via view canonicalization, which are then lifted to 3D keyframes under contact + VLM reasoning;
+  <strong>(3) Animation</strong> — the 3D keyframes condition a pretrained video-diffusion model to render the final long interaction video.
+</p>
+
+  <div class="g-links">
+  <a href="https://kunkun0w0.github.io/project/GenHSI/" rel="external nofollow noopener" target="_blank">Project page</a>
+  <a href="https://ivl.cs.brown.edu/research/genhsi" rel="external nofollow noopener" target="_blank">IVL mirror</a>
+  <a href="https://arxiv.org/abs/2506.19840" rel="external nofollow noopener" target="_blank">arXiv</a>
+</div>
+
+  <p style="font-size:0.9rem; color: var(--global-text-color-light); margin-top: 0.9rem;">
+  <strong>Authors:</strong> Zekun Li, Rui Zhou, <strong>Rahul Sajnani</strong>, Xiaoyan Cong, Daniel Ritchie, Srinath Sridhar.
+</p>
+
+  <p style="font-size:0.9rem; color: var(--global-text-color-light); margin-top: 0.6rem;">
+  Same instinct as GeoDiffuser — use a pretrained generative model as a compositional substrate without retraining — carried from 2D image editing to 3D-aware long-form video generation.
+</p>
+
+  <h3 style="font-size:1rem; font-weight:600; margin:1.8rem 0 0.4rem;">Scene 1 — <em>"A man sits on the bed, then sits on the chair."</em>
+</h3>
+
+  <div class="g-gallery g-gal-2" style="grid-template-columns: 1fr 1fr; gap: 10px;">
+  <div>
+    <div class="g-fig" style="padding:4px;">
+      <video muted="" autoplay="" loop="" playsinline="" preload="metadata" style="width:100%; display:block; border-radius:4px;">
+        <source src="/assets/video/projects/genhsi/scene1_kling.mp4" type="video/mp4"></source>
+      </video>
+    </div>
+    <div class="g-caption">
+<strong>Baseline</strong> — Kling (with elements)</div>
+  </div>
+  <div>
+    <div class="g-fig" style="padding:4px;">
+      <video muted="" autoplay="" loop="" playsinline="" preload="metadata" style="width:100%; display:block; border-radius:4px;">
+        <source src="/assets/video/projects/genhsi/scene1_genhsi.mp4" type="video/mp4"></source>
+      </video>
+    </div>
+    <div class="g-caption"><strong>GenHSI (ours)</strong></div>
+  </div>
+</div>
+
+  <h3 style="font-size:1rem; font-weight:600; margin:1.8rem 0 0.4rem;">Scene 2 — <em>"The girl stands next to the chair, then sits on it. After that, she approaches the table and touches it."</em>
+</h3>
+
+  <div class="g-gallery g-gal-2" style="grid-template-columns: 1fr 1fr; gap: 10px;">
+  <div>
+    <div class="g-fig" style="padding:4px;">
+      <video muted="" autoplay="" loop="" playsinline="" preload="metadata" style="width:100%; display:block; border-radius:4px;">
+        <source src="/assets/video/projects/genhsi/scene2_kling.mp4" type="video/mp4"></source>
+      </video>
+    </div>
+    <div class="g-caption">
+<strong>Baseline</strong> — Kling (with elements)</div>
+  </div>
+  <div>
+    <div class="g-fig" style="padding:4px;">
+      <video muted="" autoplay="" loop="" playsinline="" preload="metadata" style="width:100%; display:block; border-radius:4px;">
+        <source src="/assets/video/projects/genhsi/scene2_genhsi.mp4" type="video/mp4"></source>
+      </video>
+    </div>
+    <div class="g-caption"><strong>GenHSI (ours)</strong></div>
+  </div>
+</div>
+
+  <!-- =================== APPEARANCEPOINTERS =================== -->
+  <h2 class="g-section-title">
+<span class="g-tag">Under review · ICLR 2027</span>AppearancePointers</h2>
+  <p class="g-section-sub">Fine-grained multi-region controllable image generation on FLUX / MMDiT. Every region in the output can be independently specified by a <strong>different modality</strong> — text, reference image, or material texture — without region bleed, in a single denoising pass. Introduces per-region appearance-pointer tokens plus a position-ID resampling scheme that routes each conditioning signal to its designated spatial region.</p>
+
+  <div class="g-links">
+  <a href="/projects/appearance_pointers/">Project page</a>
+  <a href="https://ivl.cs.brown.edu/research/appearance_pointers.html" rel="external nofollow noopener" target="_blank">IVL mirror</a>
+  <a href="https://arxiv.org/abs/2607.19344" rel="external nofollow noopener" target="_blank">arXiv</a>
+</div>
+
+  <div class="g-fig mt-2">
+  
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/projects/appearance_pointers/Teaser_new.png" class="img-fluid" width="100%" height="auto" alt="AppearancePointers teaser" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </picture>
+
+  
+</figure>
+
+</div>
+  <div class="g-caption">Per-region control via text, reference image, or material texture — in a single denoising pass of a pretrained FLUX / MMDiT model.</div>
+
+  <h3 style="font-size:1rem; font-weight:600; margin:1.6rem 0 0.4rem;">Method overview</h3>
+  <div class="g-fig">
+  
+
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+    <img src="/assets/img/projects/appearance_pointers/Overview.png" class="img-fluid" width="100%" height="auto" alt="AppearancePointers method" loading="lazy" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </picture>
+
+  
+</figure>
+
+</div>
+  <div class="g-caption">Region tokens attach appearance pointers that route conditioning to their spatial regions via position-ID resampling in the attention layers.</div>
+
+  <h3 style="font-size:1rem; font-weight:600; margin:1.6rem 0 0.4rem;">Qualitative results</h3>
+  <div class="g-gallery g-gal-3">
+  <div class="g-cell"><img src="/assets/img/projects/appearance_pointers/Qual_Supp_1.png" alt="Qualitative 1"></div>
+  <div class="g-cell"><img src="/assets/img/projects/appearance_pointers/Qual_Supp_2.png" alt="Qualitative 2"></div>
+  <div class="g-cell"><img src="/assets/img/projects/appearance_pointers/Qual_Supp_3.png" alt="Qualitative 3"></div>
+</div>
+  <div class="g-caption">Multi-region generations with mixed conditioning modalities per region.</div>
+
+  <p class="g-caption" style="text-align:left; max-width:none; margin-top:1rem;">
+  <strong>Headline results:</strong> Beats DreamRenderer, MSDiffusion, InstanceDiffusion, and Seg2Any — <strong>gold</strong> on CLIP-I / DINO-I / MIoU for image-conditioned region generation, and gold on CLIP-I / DINO-I for text-conditioned. Also curated and released <strong>AP-37K</strong>, a 37K-sample multimodal dataset of text + reference-image + texture conditioning triplets.
+</p>
+
+  <div class="g-cta">
+Full project pages: <a href="/projects/geodiffuser/">GeoDiffuser →</a> · <a href="https://kunkun0w0.github.io/project/GenHSI/" rel="external nofollow noopener" target="_blank">GenHSI →</a> · <a href="/projects/appearance_pointers/">AppearancePointers →</a>
+</div>
+
+  <script>
+(function(){
+  function tryPlay(v){
+    if(!v) return;
+    try{ v.muted=true; v.playsInline=true; var p=v.play(); if(p&&p.catch) p.catch(function(){}); } catch(e){}
+  }
+  function init(){
+    var vids = document.querySelectorAll('.gen-wrap video');
+    if(!('IntersectionObserver' in window)){ vids.forEach(tryPlay); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ tryPlay(e.target); }
+        else { try{ e.target.pause(); }catch(_){} }
+      });
+    }, { threshold: 0.2 });
+    vids.forEach(function(v){ io.observe(v); });
+  }
+  if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', init); } else { init(); }
+})();
+</script>
+
+</div>
+
+  </article>
+
+  
+
+  
+</div>
+
+      
+    </div>
+
+    <!-- Footer -->
+    
+  <footer class="fixed-bottom" role="contentinfo">
+    <div class="container mt-0">
+      © Copyright 2026
+      Rahul
+      
+      Sajnani. 
+      
+      
+        Last updated: October 25, 2026.
+      
+    </div>
+  </footer>
+
+
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Bootsrap & MDB scripts -->
+<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="/assets/js/mdb.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+  <!-- Masonry & imagesLoaded -->
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/masonry.js" type="text/javascript"></script>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script>
+
+
+
+<!-- Bootstrap Table -->
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script>
+<script defer src="/assets/js/common.js?3b2c029f7edfe33e0d766b3d5965e124"></script>
+<script defer src="/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script>
+
+<!-- Jupyter Open External Links New Tab -->
+<script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script>
+
+
+
+    
+  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+
+
+  <script async src="https://badge.dimensions.ai/badge.js"></script>
+
+
+    
+  
+    <!-- MathJax -->
+    <script type="text/javascript">
+      window.MathJax = {
+        tex: {
+          tags: 'ams',
+        },
+      };
+    </script>
+    <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script>
+  
+
+
+    
+
+    
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJZQBHH9N1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-RJZQBHH9N1');
+  </script>
+
+
+
+
+    
+  <!-- Scrolling Progress Bar -->
+  <script type="text/javascript">
+    /*
+     * This JavaScript code has been adapted from the article
+     * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar,
+     * published on the website https://css-tricks.com on the 7th of May, 2014.
+     * Couple of changes were made to the original code to make it compatible
+     * with the `al-foio` theme.
+     */
+    const progressBar = $('#progress');
+    /*
+     * We set up the bar after all elements are done loading.
+     * In some cases, if the images in the page are larger than the intended
+     * size they'll have on the page, they'll be resized via CSS to accomodate
+     * the desired size. This mistake, however, breaks the computations as the
+     * scroll size is computed as soon as the elements finish loading.
+     * To account for this, a minimal delay was introduced before computing the
+     * values.
+     */
+    window.onload = function () {
+      setTimeout(progressBarSetup, 50);
+    };
+    /*
+     * We set up the bar according to the browser.
+     * If the browser supports the progress element we use that.
+     * Otherwise, we resize the bar thru CSS styling
+     */
+    function progressBarSetup() {
+      if ('max' in document.createElement('progress')) {
+        initializeProgressElement();
+        $(document).on('scroll', function () {
+          progressBar.attr({ value: getCurrentScrollPosition() });
+        });
+        $(window).on('resize', initializeProgressElement);
+      } else {
+        resizeProgressBar();
+        $(document).on('scroll', resizeProgressBar);
+        $(window).on('resize', resizeProgressBar);
+      }
+    }
+    /*
+     * The vertical scroll position is the same as the number of pixels that
+     * are hidden from view above the scrollable area. Thus, a value > 0 is
+     * how much the user has scrolled from the top
+     */
+    function getCurrentScrollPosition() {
+      return $(window).scrollTop();
+    }
+
+    function initializeProgressElement() {
+      let navbarHeight = $('#navbar').outerHeight(true);
+      $('body').css({ 'padding-top': navbarHeight });
+      $('progress-container').css({ 'padding-top': navbarHeight });
+      progressBar.css({ top: navbarHeight });
+      progressBar.attr({
+        max: getDistanceToScroll(),
+        value: getCurrentScrollPosition(),
+      });
+    }
+    /*
+     * The offset between the html document height and the browser viewport
+     * height will be greater than zero if vertical scroll is possible.
+     * This is the distance the user can scroll
+     */
+    function getDistanceToScroll() {
+      return $(document).height() - $(window).height();
+    }
+
+    function resizeProgressBar() {
+      progressBar.css({ width: getWidthPercentage() + '%' });
+    }
+    // The scroll ratio equals the percentage to resize the bar
+    function getWidthPercentage() {
+      return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+    }
+  </script>
+
+
+    
+
+    
+
+    
+
+    
+  <script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script>
+  <script>
+    addBackToTop();
+  </script>
+
+
+    
+
+  </body>
+</html>
