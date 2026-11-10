@@ -69,7 +69,7 @@ nav_order: 9
 
 <div class="demos-wrap" markdown="1">
 
-<p class="lead">Short demo reels from recent and past work &mdash; <strong>UniWALM</strong> (real-robot manipulation) and a self-driving car project. For full write-ups: <a href="/projects/uniwalm/">UniWALM project page</a>, <a href="/projects/self_driving/">Self-Driving project page</a>.</p>
+<p class="lead">Short demo videos from recent and past work &mdash; <strong>UniWALM</strong> (real-robot manipulation) and a self-driving car project. For full write-ups: <a href="/projects/uniwalm/">UniWALM project page</a>, <a href="/projects/self_driving/">Self-Driving project page</a>.</p>
 
 <div class="d-note" markdown="0">
 <strong>Note on UniWALM videos below.</strong> Real-robot rollouts here are from an <strong>unoptimized</strong> deployment pipeline (I/O, teleop stack, logging overhead) and run <strong>without a real-time controller (RTC)</strong>, which is why the motion appears jerky. The actual UniWALM <strong>policy + language-memory reasoning runs at ~140&nbsp;ms per step</strong> (N&nbsp;=&nbsp;10 flow-matching steps on an H100). Smoothness would come for free with an RTC layer on top.
@@ -78,45 +78,15 @@ nav_order: 9
 <h2 class="d-section-title">UniWALM narrated demo</h2>
 <p class="d-section-sub"><strong>UniWALM</strong> is a <em>world-action-language model</em> that predicts actions, reasons at the speed of action, and can generate the future. Real-robot bimanual dexterous manipulation at <strong>1&times; speed, no speedup</strong>, with the policy's predicted subtask overlaid live.</p>
 
-<style>
-  .narrated-wrap { position: relative; }
-  .sound-cta {
-    position: absolute; top: 12px; right: 12px; z-index: 3;
-    background: rgba(10,10,20,0.78); color: #fff;
-    padding: 6px 12px; border-radius: 999px;
-    font-size: 0.82rem; font-weight: 600;
-    cursor: pointer; border: 1px solid rgba(255,255,255,0.2);
-    backdrop-filter: blur(4px);
-    transition: opacity 0.25s ease, transform 0.15s ease;
-    user-select: none;
-  }
-  .sound-cta:hover { transform: scale(1.04); }
-  .sound-cta.hidden { opacity: 0; pointer-events: none; }
-</style>
-<div class="d-video d-16x9 narrated-wrap" markdown="0">
-  <video id="uniwalm-narrated-demo-demos" class="narrated-demo" muted autoplay loop playsinline preload="metadata" controls>
+<div class="d-video d-16x9" markdown="0">
+  <video class="narrated-demo" playsinline preload="metadata" controls>
     <source src="/assets/video/projects/uniwalm/uniwalm_demo.mp4" type="video/mp4">
   </video>
-  <div id="sound-cta-demos" class="sound-cta">🔊 Click for sound</div>
 </div>
 <div class="d-caption">UniWALM bimanual dexterous manipulation. 1&times; speed, with voiceover.</div>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  var v = document.getElementById("uniwalm-narrated-demo-demos");
-  var cta = document.getElementById("sound-cta-demos");
-  if (!v) return;
-  function unmute() {
-    v.muted = false; v.volume = 1; v.loop = false;
-    if (v.paused) { v.play().catch(function(){}); }
-    cta.classList.add("hidden");
-  }
-  cta && cta.addEventListener("click", unmute);
-  v.addEventListener("volumechange", function () { if (!v.muted) cta.classList.add("hidden"); });
-});
-</script>
 
 <h2 class="d-section-title">Capability wall</h2>
-<p class="d-section-sub">Overview reel across the four UniWALM task families: bimanual, dexterous, multi-stage, and memory-dependent.</p>
+<p class="d-section-sub">Overview across the four UniWALM task families: bimanual, dexterous, multi-stage, and memory-dependent.</p>
 
 <div class="d-video d-16x9" markdown="0">
   <video muted autoplay loop playsinline preload="metadata" poster="/assets/video/home/hero_capability_wall_poster.jpg">
