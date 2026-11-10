@@ -143,18 +143,61 @@ giscus_comments: false
 </div>
 
 <!-- -------------------- NARRATED DEMO (LEAD) -------------------- -->
+<style>
+  .narrated-wrap { position: relative; }
+  .sound-cta {
+    position: absolute; top: 12px; right: 12px; z-index: 3;
+    background: rgba(10,10,20,0.78); color: #fff;
+    padding: 6px 12px; border-radius: 999px;
+    font-size: 0.82rem; font-weight: 600;
+    cursor: pointer; border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(4px);
+    transition: opacity 0.25s ease, transform 0.15s ease;
+    user-select: none;
+  }
+  .sound-cta:hover { transform: scale(1.04); }
+  .sound-cta.hidden { opacity: 0; pointer-events: none; }
+</style>
 <div class="row">
   <div class="col-sm-12 mt-2">
-    <div class="white-panel" style="padding:0; overflow:hidden;">
-      <video playsinline preload="metadata" controls style="width:100%; height:auto; display:block; border-radius:8px;">
+    <div class="white-panel narrated-wrap" style="padding:0; overflow:hidden;">
+      <video id="uniwalm-narrated-demo" class="pause-on-out-of-view" muted autoplay loop playsinline preload="metadata" controls style="width:100%; height:auto; display:block; border-radius:8px;">
         <source src="/assets/video/projects/uniwalm/uniwalm_demo.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
+      <div id="sound-cta" class="sound-cta">🔊 Click for sound</div>
     </div>
   </div>
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var v = document.getElementById("uniwalm-narrated-demo");
+  var cta = document.getElementById("sound-cta");
+  if (!v) return;
+  // Click-to-unmute
+  function unmute() {
+    v.muted = false;
+    v.volume = 1;
+    v.loop = false;
+    if (v.paused) { v.play().catch(function(){}); }
+    cta.classList.add("hidden");
+  }
+  cta && cta.addEventListener("click", unmute);
+  v.addEventListener("volumechange", function () { if (!v.muted) cta.classList.add("hidden"); });
+  // Play/pause on scroll
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { v.play().catch(function(){}); }
+        else { try { v.pause(); } catch (_) {} }
+      });
+    }, { threshold: 0.25 });
+    io.observe(v);
+  }
+});
+</script>
 <div class="fig-caption">
-  <strong>UniWALM</strong> is a world-action-language model that <em>predicts</em>, <em>reasons at the speed of action</em>, and can <em>generate the future</em>. Real-robot bimanual dexterous manipulation at 1&times; speed, with voiceover and live subtask prediction.
+  <strong>UniWALM</strong> is a world-action-language model that <em>predicts actions</em>, <em>reasons at the speed of action</em>, and can <em>generate the future</em>. Real-robot bimanual dexterous manipulation at 1&times; speed, no speedup, with the policy's predicted subtask overlaid live.
 </div>
 
 <!-- -------------------- TEASER -------------------- -->

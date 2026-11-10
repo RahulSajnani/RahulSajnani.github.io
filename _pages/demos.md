@@ -76,14 +76,44 @@ nav_order: 9
 </div>
 
 <h2 class="d-section-title">UniWALM narrated demo</h2>
-<p class="d-section-sub"><strong>UniWALM</strong> is a <em>world-action-language model</em> that predicts, reasons at the speed of action, and can generate the future. Real-robot bimanual dexterous manipulation at <strong>1&times; speed, no speedup</strong>, with the policy's predicted subtask overlaid live.</p>
+<p class="d-section-sub"><strong>UniWALM</strong> is a <em>world-action-language model</em> that predicts actions, reasons at the speed of action, and can generate the future. Real-robot bimanual dexterous manipulation at <strong>1&times; speed, no speedup</strong>, with the policy's predicted subtask overlaid live.</p>
 
-<div class="d-video d-16x9" markdown="0">
-  <video playsinline preload="metadata" controls>
+<style>
+  .narrated-wrap { position: relative; }
+  .sound-cta {
+    position: absolute; top: 12px; right: 12px; z-index: 3;
+    background: rgba(10,10,20,0.78); color: #fff;
+    padding: 6px 12px; border-radius: 999px;
+    font-size: 0.82rem; font-weight: 600;
+    cursor: pointer; border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(4px);
+    transition: opacity 0.25s ease, transform 0.15s ease;
+    user-select: none;
+  }
+  .sound-cta:hover { transform: scale(1.04); }
+  .sound-cta.hidden { opacity: 0; pointer-events: none; }
+</style>
+<div class="d-video d-16x9 narrated-wrap" markdown="0">
+  <video id="uniwalm-narrated-demo-demos" class="narrated-demo" muted autoplay loop playsinline preload="metadata" controls>
     <source src="/assets/video/projects/uniwalm/uniwalm_demo.mp4" type="video/mp4">
   </video>
+  <div id="sound-cta-demos" class="sound-cta">🔊 Click for sound</div>
 </div>
 <div class="d-caption">UniWALM bimanual dexterous manipulation. 1&times; speed, with voiceover.</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var v = document.getElementById("uniwalm-narrated-demo-demos");
+  var cta = document.getElementById("sound-cta-demos");
+  if (!v) return;
+  function unmute() {
+    v.muted = false; v.volume = 1; v.loop = false;
+    if (v.paused) { v.play().catch(function(){}); }
+    cta.classList.add("hidden");
+  }
+  cta && cta.addEventListener("click", unmute);
+  v.addEventListener("volumechange", function () { if (!v.muted) cta.classList.add("hidden"); });
+});
+</script>
 
 <h2 class="d-section-title">Capability wall</h2>
 <p class="d-section-sub">Overview reel across the four UniWALM task families: bimanual, dexterous, multi-stage, and memory-dependent.</p>
@@ -181,8 +211,20 @@ Full project pages: <a href="/projects/uniwalm/">UniWALM &rarr;</a> &middot; <a 
     }, { threshold: 0.25 });
     io.observe(el);
   }
+  function onPauseOnly(el){
+    if(!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting){ try{ e.target.pause(); }catch(_){} }
+      });
+    }, { threshold: 0.25 });
+    io.observe(el);
+  }
   function init(){
-    document.querySelectorAll('.demos-wrap video').forEach(onInView);
+    document.querySelectorAll('.demos-wrap video').forEach(function(v){
+      if (v.classList.contains('narrated-demo')) { onPauseOnly(v); }
+      else { onInView(v); }
+    });
   }
   if(document.readyState === 'loading'){
     document.addEventListener('DOMContentLoaded', init);
