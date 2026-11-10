@@ -75,6 +75,16 @@ nav_order: 9
 <strong>Note on UniWALM videos below.</strong> Real-robot rollouts here are from an <strong>unoptimized</strong> deployment pipeline (I/O, teleop stack, logging overhead) and run <strong>without a real-time controller (RTC)</strong>, which is why the motion appears jerky. The actual UniWALM <strong>policy + language-memory reasoning runs at ~140&nbsp;ms per step</strong> (N&nbsp;=&nbsp;10 flow-matching steps on an H100). Smoothness would come for free with an RTC layer on top.
 </div>
 
+<h2 class="d-section-title">UniWALM narrated demo</h2>
+<p class="d-section-sub"><strong>UniWALM</strong> is a <em>world-action-language model</em> that predicts, reasons at the speed of action, and can generate the future. Real-robot bimanual dexterous manipulation at <strong>1&times; speed, no speedup</strong>, with the policy's predicted subtask overlaid live.</p>
+
+<div class="d-video d-16x9" markdown="0">
+  <video playsinline preload="metadata" controls>
+    <source src="/assets/video/projects/uniwalm/uniwalm_demo.mp4" type="video/mp4">
+  </video>
+</div>
+<div class="d-caption">UniWALM bimanual dexterous manipulation. 1&times; speed, with voiceover.</div>
+
 <h2 class="d-section-title">Capability wall</h2>
 <p class="d-section-sub">Overview reel across the four UniWALM task families: bimanual, dexterous, multi-stage, and memory-dependent.</p>
 

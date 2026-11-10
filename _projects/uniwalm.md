@@ -142,9 +142,24 @@ giscus_comments: false
   </div>
 </div>
 
-<!-- -------------------- TEASER -------------------- -->
+<!-- -------------------- NARRATED DEMO (LEAD) -------------------- -->
 <div class="row">
   <div class="col-sm-12 mt-2">
+    <div class="white-panel" style="padding:0; overflow:hidden;">
+      <video playsinline preload="metadata" controls style="width:100%; height:auto; display:block; border-radius:8px;">
+        <source src="/assets/video/projects/uniwalm/uniwalm_demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</div>
+<div class="fig-caption">
+  <strong>UniWALM</strong> is a world-action-language model that <em>predicts</em>, <em>reasons at the speed of action</em>, and can <em>generate the future</em>. Real-robot bimanual dexterous manipulation at 1&times; speed, with voiceover and live subtask prediction.
+</div>
+
+<!-- -------------------- TEASER -------------------- -->
+<div class="row mt-4">
+  <div class="col-sm-12">
     <div class="white-panel">
       {% include figure.liquid loading="eager" path="assets/img/projects/uniwalm/arxiv_teaser.png" class="img-fluid rounded" alt="UniWALM teaser (from arXiv paper)" %}
     </div>
@@ -165,7 +180,7 @@ giscus_comments: false
     </div>
   </div>
 </div>
-<div class="fig-caption">Overview video: UniWALM in action across real and simulated manipulation tasks.</div>
+<div class="fig-caption">Silent overview reel of UniWALM across real and simulated manipulation tasks.</div>
 
 <!-- -------------------- OVERVIEW -------------------- -->
 <h2 id="overview" class="section-title">Overview</h2>
